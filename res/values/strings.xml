@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="velkommen">Velkommen til olpriser i Kristiansand. Dette er guiden for deg som er prisbevisst og vil ha den beste olen.</string>
-    <string name="app_name">MainScreen</string>
+    <string name="velkommen">Velkommen til Ølpriser i Kristiansand. Dette er guiden for deg som er prisbevisst og vil ha den beste ølen.</string>
+    <string name="app_name">Ølpriser i Kristiansand</string>
 
 </resources>
