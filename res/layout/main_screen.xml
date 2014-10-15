@@ -4,7 +4,14 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal">
-	
+
+    <TextView
+        android:id="@+id/velkommen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:capitalize="characters"
+        android:text="@string/velkommen" />
+
     <!--  Sample Dashboard screen with Two buttons -->
     <Button android:id="@+id/btnViewProducts"
         android:layout_width="fill_parent"
