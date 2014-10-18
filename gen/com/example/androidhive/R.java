@@ -15,17 +15,17 @@ public final class R {
     }
     public static final class id {
         public static final int btnCreateProduct=0x7f050003;
-        public static final int btnDelete=0x7f050005;
         public static final int btnSave=0x7f050004;
         public static final int btnViewProducts=0x7f050008;
         public static final int inputDesc=0x7f050002;
         public static final int inputName=0x7f050000;
         public static final int inputPrice=0x7f050001;
-        public static final int name=0x7f050007;
-        public static final int pid=0x7f050006;
+        public static final int name=0x7f050006;
+        public static final int pid=0x7f050005;
+        public static final int velkommen=0x7f050007;
     }
     public static final class layout {
-        public static final int add_product=0x7f030000;
+        public static final int add_products=0x7f030000;
         public static final int all_products=0x7f030001;
         public static final int edit_product=0x7f030002;
         public static final int list_item=0x7f030003;
@@ -33,6 +33,12 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f040001;
-        public static final int hello=0x7f040000;
+        public static final int beskrivelse=0x7f040006;
+        public static final int lagre=0x7f040007;
+        public static final int legg_til_pris=0x7f040003;
+        public static final int pris=0x7f040005;
+        public static final int utested_navn=0x7f040004;
+        public static final int velkommen=0x7f040000;
+        public static final int vis_utesteder=0x7f040002;
     }
 }
