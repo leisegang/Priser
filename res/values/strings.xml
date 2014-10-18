@@ -9,5 +9,6 @@
     <string name="pris">Pris</string>
     <string name="beskrivelse">Beskrivelse</string>
     <string name="lagre">Lagre</string>
+    <string name="slett">Slett</string>
 
 </resources>
