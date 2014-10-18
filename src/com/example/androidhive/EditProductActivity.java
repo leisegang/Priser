@@ -60,7 +60,7 @@ public class EditProductActivity extends Activity {
 
 		// save button
 		btnSave = (Button) findViewById(R.id.btnSave);
-		btnDelete = (Button) findViewById(R.id.btnDelete);
+		//btnDelete = (Button) findViewById(R.id.btnDelete);
 
 		// getting product details from intent
 		Intent i = getIntent();
