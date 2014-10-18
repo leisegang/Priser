@@ -8,5 +8,6 @@
     <string name="utested_navn">Utested navn</string>
     <string name="pris">Pris</string>
     <string name="beskrivelse">Beskrivelse</string>
+    <string name="lagre">Lagre</string>
 
 </resources>
