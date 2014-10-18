@@ -3,5 +3,7 @@
 
     <string name="velkommen">Velkommen til Ølpriser i Kristiansand. Dette er guiden for deg som er prisbevisst og vil ha den beste ølen.</string>
     <string name="app_name">Ølpriser i Kristiansand</string>
+    <string name="vis_utesteder">Vis utesteder</string>
+    <string name="legg_til_pris">Legg til ny pris</string>
 
 </resources>
