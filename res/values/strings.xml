@@ -5,5 +5,8 @@
     <string name="app_name">Ølpriser i Kristiansand</string>
     <string name="vis_utesteder">Vis utesteder</string>
     <string name="legg_til_pris">Legg til ny pris</string>
+    <string name="utested_navn">Utested navn</string>
+    <string name="pris">Pris</string>
+    <string name="beskrivelse">Beskrivelse</string>
 
 </resources>
