@@ -49,7 +49,6 @@
         android:textSize="17dip"/>
 
     <!-- Input description -->
-
     <EditText
         android:id="@+id/inputDesc"
         android:layout_width="fill_parent"
@@ -58,7 +57,7 @@
         android:layout_marginBottom="15dip"
         android:gravity="top"
         android:lines="4" />
-
+        
     <!-- Button Create Product -->
     <Button
         android:id="@+id/btnSave"
@@ -66,11 +65,11 @@
         android:layout_height="wrap_content"
         android:text="@string/lagre" />
     
-	<!-- Button Delete Product -->
+    <!-- Button Delete Product -->
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/slett" />
+        android:text="@string/slett" />	     
 
 </LinearLayout>
