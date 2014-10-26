@@ -1,4 +1,4 @@
-package com.example.androidhive;
+package com.i206.olpriser;
 
 import java.io.BufferedReader;
 import java.io.IOException;

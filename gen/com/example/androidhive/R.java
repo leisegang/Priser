@@ -33,10 +33,13 @@ public final class R {
         public static final int main_screen=0x7f030004;
     }
     public static final class string {
+        public static final int alle_utesteder=0x7f040009;
         public static final int app_name=0x7f040001;
         public static final int beskrivelse=0x7f040006;
+        public static final int endre_utested=0x7f04000b;
         public static final int lagre=0x7f040007;
         public static final int legg_til_pris=0x7f040003;
+        public static final int legg_til_utested=0x7f04000a;
         public static final int pris=0x7f040005;
         public static final int slett=0x7f040008;
         public static final int utested_navn=0x7f040004;

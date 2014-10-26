@@ -1,4 +1,4 @@
-package com.example.androidhive;
+package com.i206.olpriser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +8,8 @@ import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.example.androidhive.R;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;

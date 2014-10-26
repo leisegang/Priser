@@ -1,4 +1,6 @@
-package com.example.androidhive;
+package com.i206.olpriser;
+
+import com.example.androidhive.R;
 
 import android.app.Activity;
 import android.content.Intent;
