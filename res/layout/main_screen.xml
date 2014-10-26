@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
     android:gravity="center_horizontal"
-    android:paddingTop="10dip">
+    android:orientation="vertical"
+    android:paddingTop="10dip" >
 
+<!--  Sample Dashboard screen with Two buttons, a TextView and an ImageView -->    
+    
     <TextView
         android:id="@+id/velkommen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dip"
         android:text="@string/velkommen"
-        android:padding="10dip" />
-
-    <!--  Sample Dashboard screen with Two buttons -->
-    <Button android:id="@+id/btnViewProducts"
+        android:textSize="15sp" />
+ 
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/vis_utesteder"
-        android:layout_marginTop="25dip"/>
+        android:src="@drawable/forside" />
     
-    <Button android:id="@+id/btnCreateProduct"
-        android:layout_width="fill_parent"
+    <Button
+        android:id="@+id/btnViewProducts"
+        android:layout_width="298dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dip"
+        android:background="@drawable/button"
+        android:text="@string/vis_utesteder"
+        android:textSize="25sp" />
+    
+    <Button
+        android:id="@+id/btnCreateProduct"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dip"
+        android:background="@drawable/button"
         android:text="@string/legg_til_pris"
-        android:layout_marginTop="25dip"/>
+        android:textSize="25sp" />
 
 </LinearLayout>
