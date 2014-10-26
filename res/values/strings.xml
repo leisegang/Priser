@@ -10,5 +10,8 @@
     <string name="beskrivelse">Beskrivelse</string>
     <string name="lagre">Lagre</string>
     <string name="slett">Slett</string>
+    <string name="alle_utesteder">Alle utesteder</string>
+    <string name="legg_til_utested">Legg til utested</string>
+    <string name="endre_utested">Endre utested</string>
 
 </resources>
