@@ -9,7 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.androidhive.R;
+import com.is206.olpriser.R;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

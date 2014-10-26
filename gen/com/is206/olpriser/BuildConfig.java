@@ -1,5 +1,5 @@
 /** Automatically generated file. DO NOT MODIFY */
-package com.example.androidhive;
+package com.is206.olpriser;
 
 public final class BuildConfig {
     public final static boolean DEBUG = true;

@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.androidhive;
+package com.is206.olpriser;
 
 public final class R {
     public static final class attr {
