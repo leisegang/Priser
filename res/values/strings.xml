@@ -6,12 +6,15 @@
     <string name="vis_utesteder">Vis utesteder</string>
     <string name="legg_til_pris">Legg til ny pris</string>
     <string name="utested_navn">Utested navn</string>
-    <string name="pris">Pris</string>
-    <string name="beskrivelse">Beskrivelse</string>
-    <string name="lagre">Lagre</string>
+    <string name="pris">Pris:</string>
+    <string name="beskrivelse">Beskrivelse:</string>
+    <string name="endre">Endre</string>
     <string name="slett">Slett</string>
     <string name="alle_utesteder">Alle utesteder</string>
     <string name="legg_til_utested">Legg til utested</string>
     <string name="endre_utested">Endre utested</string>
+    <string name="vent">Laster utesteder. Vennligst vent..</string>
+    <string name="rating">Rating:</string>
+    <string name="ratingNum">5</string>
 
 </resources>

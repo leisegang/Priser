@@ -29,7 +29,7 @@ public class MainScreenActivity extends Activity{
 			@Override
 			public void onClick(View view) {
 				// Launching All products Activity
-				Intent i = new Intent(getApplicationContext(), AllProductsActivity.class);
+				Intent i = new Intent(getApplicationContext(), AllUtestederActivity.class);
 				startActivity(i);
 				
 			}
@@ -41,7 +41,7 @@ public class MainScreenActivity extends Activity{
 			@Override
 			public void onClick(View view) {
 				// Launching create new product activity
-				Intent i = new Intent(getApplicationContext(), NewProductActivity.class);
+				Intent i = new Intent(getApplicationContext(), NewUtestedActivity.class);
 				startActivity(i);
 				
 			}
