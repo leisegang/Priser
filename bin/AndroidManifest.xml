@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light" >
         <activity
-            android:name=".MainScreenActivity"
+            android:name=".AllUtestederActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,10 +23,10 @@
             </intent-filter>
         </activity>
 
-        <!-- All Product Activity -->
+        <!-- Main Screen Activity -->
         <activity
-            android:name=".AllUtestederActivity"
-            android:label="@string/alle_utesteder" >
+            android:name=".MainScreenActivity"
+            android:label="@string/omoss" >
         </activity>
 
         <!-- Add Product Activity -->
@@ -38,8 +38,9 @@
         <!-- Edit Product Activity -->
         <activity
             android:name=".EditUtestedActivity"
-            android:label="@string/endre_utested" >
+            android:label="@string/utested" >
         </activity>
+
         
     </application>
 

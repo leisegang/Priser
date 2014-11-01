@@ -16,5 +16,9 @@
     <string name="vent">Laster utesteder. Vennligst vent..</string>
     <string name="rating">Rating:</string>
     <string name="ratingNum">5</string>
+    <string name="hjem">Hjem</string>
+    <string name="tips">Tips oss</string>
+    <string name="omoss">Om Oss</string>
+    <string name="utested">Utested</string>
 
 </resources>
