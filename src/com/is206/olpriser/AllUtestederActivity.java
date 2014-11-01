@@ -40,7 +40,7 @@ public class AllUtestederActivity extends ListActivity {
 	ArrayList<HashMap<String, String>> utestederList;
 
 	// url to get all products list
-	private static String url_all_utesteder = "http://priser.leisegang.no/get_all_utested.php";
+	private static String url_all_utesteder = "http://priser.leisegang.no/get_all_utested_new.php";
 
 	// JSON Node names
 	private static final String TAG_SUCCESS = "success";
