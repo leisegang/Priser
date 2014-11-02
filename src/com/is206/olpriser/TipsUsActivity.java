@@ -1,22 +1,14 @@
 package com.is206.olpriser;
 
-import com.is206.olpriser.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-
-public class AboutUsActivity extends Activity{
-	
-	Button btnViewProducts;
-	Button btnNewProduct;
+public class TipsUsActivity extends Activity {
 	
     // Initiating Menu XML file (menu.xml)
     @Override
@@ -45,19 +37,19 @@ public class AboutUsActivity extends Activity{
             // Ex: launching new activity/screen or show alert message
         	Intent utestederIntent = new Intent(getApplicationContext(), AllUtestederActivity.class);
 			startActivityForResult(utestederIntent, 0);
-            Toast.makeText(AboutUsActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
+            Toast.makeText(TipsUsActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.tipsOss:
         	Intent tipsIntent = new Intent(getApplicationContext(), TipsUsActivity.class);
 			startActivityForResult(tipsIntent, 0);
-            Toast.makeText(AboutUsActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(TipsUsActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.omOss:
         	Intent hjemIntent = new Intent(getApplicationContext(), AboutUsActivity.class);
 			startActivityForResult(hjemIntent, 0);
-            Toast.makeText(AboutUsActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
+            Toast.makeText(TipsUsActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
             return true;
  
  
@@ -69,35 +61,7 @@ public class AboutUsActivity extends Activity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.about_us);
+		setContentView(R.layout.tips_us);
 		getActionBar().setHomeButtonEnabled(true);
-		
-		// Buttons
-		btnViewProducts = (Button) findViewById(R.id.btnViewProducts);
-		btnNewProduct = (Button) findViewById(R.id.btnCreateProduct);
-		
-		// view products click event
-		btnViewProducts.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View view) {
-				// Launching All products Activity
-				Intent i = new Intent(getApplicationContext(), AllUtestederActivity.class);
-				startActivity(i);
-				
-			}
-		});
-		
-		// view products click event
-		btnNewProduct.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View view) {
-				// Launching create new product activity
-				Intent i = new Intent(getApplicationContext(), NewUtestedActivity.class);
-				startActivity(i);
-				
-			}
-		});
 	}    	
 }

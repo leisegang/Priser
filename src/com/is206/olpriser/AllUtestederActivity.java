@@ -78,6 +78,8 @@ public class AllUtestederActivity extends ListActivity {
             return true;
  
         case R.id.tipsOss:
+        	Intent tipsIntent = new Intent(getApplicationContext(), TipsUsActivity.class);
+			startActivityForResult(tipsIntent, 0);
             Toast.makeText(AllUtestederActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
             return true;
  

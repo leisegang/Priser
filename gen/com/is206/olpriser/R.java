@@ -26,6 +26,7 @@ public final class R {
     public static final class id {
         public static final int btnCreateProduct=0x7f050003;
         public static final int btnSave=0x7f050009;
+        public static final int btnTipsUs=0x7f05000f;
         public static final int btnViewProducts=0x7f050002;
         public static final int hjem=0x7f05000c;
         public static final int imageView1=0x7f050001;
@@ -48,6 +49,7 @@ public final class R {
         public static final int edit_utested=0x7f030004;
         public static final int list_item=0x7f030005;
         public static final int menu=0x7f030006;
+        public static final int tips_us=0x7f030007;
     }
     public static final class string {
         public static final int alle_utesteder=0x7f040009;
@@ -64,6 +66,7 @@ public final class R {
         public static final int ratingNum=0x7f04000e;
         public static final int slett=0x7f040008;
         public static final int tips=0x7f040010;
+        public static final int tips_tekst=0x7f040013;
         public static final int utested=0x7f040012;
         public static final int utested_navn=0x7f040004;
         public static final int velkommen=0x7f040000;

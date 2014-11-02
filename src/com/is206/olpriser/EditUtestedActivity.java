@@ -89,6 +89,8 @@ public class EditUtestedActivity extends Activity {
             return true;
  
         case R.id.tipsOss:
+        	Intent tipsIntent = new Intent(getApplicationContext(), TipsUsActivity.class);
+			startActivityForResult(tipsIntent, 0);
             Toast.makeText(EditUtestedActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
             return true;
  
