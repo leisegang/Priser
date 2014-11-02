@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 
-public class MainScreenActivity extends Activity{
+public class AboutUsActivity extends Activity{
 	
 	Button btnViewProducts;
 	Button btnNewProduct;
@@ -34,7 +34,10 @@ public class MainScreenActivity extends Activity{
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-         
+    	if(android.R.id.home == item.getItemId()){
+    		finish();
+    	}
+    	
         switch (item.getItemId())
         {
         case R.id.hjem:
@@ -42,17 +45,17 @@ public class MainScreenActivity extends Activity{
             // Ex: launching new activity/screen or show alert message
         	Intent utestederIntent = new Intent(getApplicationContext(), AllUtestederActivity.class);
 			startActivityForResult(utestederIntent, 0);
-            Toast.makeText(MainScreenActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AboutUsActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.tipsOss:
-            Toast.makeText(MainScreenActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AboutUsActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.omOss:
-        	Intent hjemIntent = new Intent(getApplicationContext(), MainScreenActivity.class);
+        	Intent hjemIntent = new Intent(getApplicationContext(), AboutUsActivity.class);
 			startActivityForResult(hjemIntent, 0);
-            Toast.makeText(MainScreenActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AboutUsActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
             return true;
  
  
@@ -65,6 +68,7 @@ public class MainScreenActivity extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.about_us);
+		getActionBar().setHomeButtonEnabled(true);
 		
 		// Buttons
 		btnViewProducts = (Button) findViewById(R.id.btnViewProducts);

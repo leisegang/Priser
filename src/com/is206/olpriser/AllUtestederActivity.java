@@ -66,8 +66,7 @@ public class AllUtestederActivity extends ListActivity {
      * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
-    {
-         
+    {    
         switch (item.getItemId())
         {
         case R.id.hjem:
@@ -83,7 +82,7 @@ public class AllUtestederActivity extends ListActivity {
             return true;
  
         case R.id.omOss:
-        	Intent hjemIntent = new Intent(getApplicationContext(), MainScreenActivity.class);
+        	Intent hjemIntent = new Intent(getApplicationContext(), AboutUsActivity.class);
 			startActivityForResult(hjemIntent, 0);
             Toast.makeText(AllUtestederActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
             return true;

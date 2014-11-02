@@ -56,7 +56,10 @@ public class NewUtestedActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-         
+    	if(android.R.id.home == item.getItemId()){
+    		finish();
+    	}
+    	
         switch (item.getItemId())
         {
         case R.id.hjem:
@@ -72,7 +75,7 @@ public class NewUtestedActivity extends Activity {
             return true;
  
         case R.id.omOss:
-        	Intent hjemIntent = new Intent(getApplicationContext(), MainScreenActivity.class);
+        	Intent hjemIntent = new Intent(getApplicationContext(), AboutUsActivity.class);
 			startActivityForResult(hjemIntent, 0);
             Toast.makeText(NewUtestedActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
             return true;
@@ -87,6 +90,7 @@ public class NewUtestedActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_utested);
+		getActionBar().setHomeButtonEnabled(true);
 
 		// Edit Text
 		inputName = (EditText) findViewById(R.id.inputName);

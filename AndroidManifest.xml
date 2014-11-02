@@ -35,7 +35,8 @@
                 
         <!-- Om Oss Activity -->
         <activity
-            android:name=".MainScreenActivity"
+            android:name=".AboutUsActivity"
+            android:icon="@drawable/back"
             android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
             android:label="@string/omoss" >
         </activity>
@@ -43,6 +44,7 @@
         <!-- Add Utested Activity -->
         <activity
             android:name=".NewUtestedActivity"
+            android:icon="@drawable/back"
             android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
             android:label="@string/legg_til_utested" >
         </activity>
@@ -50,6 +52,7 @@
         <!-- Edit Utested Activity -->
         <activity
             android:name=".EditUtestedActivity"
+            android:icon="@drawable/back"
             android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
             android:label="@string/utested" >
         </activity>

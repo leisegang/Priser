@@ -7,8 +7,7 @@
     android:paddingTop="10dip" 
     android:background="@drawable/gradient_background" >
 
-<!--  Sample Dashboard screen with Two buttons, a TextView and an ImageView -->    
-    
+	<!--  Simple Dashboard screen with Two buttons, a TextView and an ImageView -->    
     <TextView
         android:id="@+id/velkommen"
         android:layout_width="wrap_content"

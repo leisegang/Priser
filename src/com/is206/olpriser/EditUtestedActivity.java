@@ -74,7 +74,10 @@ public class EditUtestedActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-         
+    	if(android.R.id.home == item.getItemId()){
+    		finish();
+    	}
+    	
         switch (item.getItemId())
         {
         case R.id.hjem:
@@ -90,7 +93,7 @@ public class EditUtestedActivity extends Activity {
             return true;
  
         case R.id.omOss:
-        	Intent hjemIntent = new Intent(getApplicationContext(), MainScreenActivity.class);
+        	Intent hjemIntent = new Intent(getApplicationContext(), AboutUsActivity.class);
 			startActivityForResult(hjemIntent, 0);
             Toast.makeText(EditUtestedActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
             return true;
@@ -105,6 +108,7 @@ public class EditUtestedActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.edit_utested);
+		getActionBar().setHomeButtonEnabled(true);
 		if (android.os.Build.VERSION.SDK_INT > 9){
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);
