@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@drawable/gradient_background" >
 
     <!-- Name text -->
     <TextView
@@ -15,7 +16,8 @@
         android:paddingRight="10dp"
         android:paddingTop="10dp"
         android:singleLine="true"
-        android:textSize="40sp" />
+        android:textSize="40sp"
+        android:textColor="#ffffff" />
     
     <!-- Logo  -->
     <ImageView
@@ -42,7 +44,8 @@
         android:paddingRight="10dip"
         android:paddingTop="10dip"
         android:text="@string/pris"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        android:textColor="#ffffff" />
 
     <!-- Price text -->
     <TextView
@@ -55,7 +58,8 @@
         android:layout_weight="0"
         android:maxLength="4"
         android:singleLine="true"
-        android:textSize="17sp" /> 
+        android:textSize="17sp"
+        android:textColor="#ffffff" /> 
     </LinearLayout>
 
     <!-- Description Label -->
@@ -66,7 +70,8 @@
         android:paddingRight="10dip"
         android:paddingTop="10dip"
         android:text="@string/beskrivelse"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        android:textColor="#ffffff" />
 
     <!-- Description text -->
     <TextView
@@ -80,7 +85,8 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        android:textColor="#ffffff" />
     
     <LinearLayout 
         android:layout_width="wrap_content"
@@ -96,7 +102,8 @@
         android:paddingRight="10dip"
         android:paddingTop="10dip"
         android:text="@string/rating"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        android:textColor="#ffffff" />
 
     <!-- Rating text -->
     <TextView
@@ -110,7 +117,8 @@
         android:maxLength="4"
         android:singleLine="true"
         android:text="@string/ratingNum"
-        android:textSize="17sp" /> 
+        android:textSize="17sp"
+        android:textColor="#ffffff" /> 
     </LinearLayout>
     
 
@@ -123,6 +131,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/button"
         android:text="@string/endre"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:textColor="#ffffff" />
 
 </LinearLayout>

@@ -64,7 +64,7 @@ public class MainScreenActivity extends Activity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_screen);
+		setContentView(R.layout.about_us);
 		
 		// Buttons
 		btnViewProducts = (Button) findViewById(R.id.btnViewProducts);

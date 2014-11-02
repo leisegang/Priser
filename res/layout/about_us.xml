@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingTop="10dip" >
+    android:paddingTop="10dip" 
+    android:background="@drawable/gradient_background" >
 
 <!--  Sample Dashboard screen with Two buttons, a TextView and an ImageView -->    
     
@@ -14,7 +15,8 @@
         android:layout_height="wrap_content"
         android:padding="10dip"
         android:text="@string/velkommen"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:textColor="#ffffff" />
  
     <ImageView
         android:id="@+id/imageView1"
@@ -29,7 +31,8 @@
         android:layout_marginTop="25dip"
         android:background="@drawable/button"
         android:text="@string/vis_utesteder"
-        android:textSize="25sp" />
+        android:textSize="25sp" 
+        android:textColor="#ffffff"/>
     
     <Button
         android:id="@+id/btnCreateProduct"
@@ -38,6 +41,7 @@
         android:layout_marginTop="25dip"
         android:background="@drawable/button"
         android:text="@string/legg_til_pris"
-        android:textSize="25sp" />
+        android:textSize="25sp" 
+        android:textColor="#ffffff" />
 
 </LinearLayout>
