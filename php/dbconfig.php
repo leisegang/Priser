@@ -1,0 +1,13 @@
+<?php
+
+/*
+ * All database connection variables
+ */
+
+define('DB_USER', "patrick_utested"); // db user
+define('DB_PASSWORD', "11pwpvomec"); // db password (mention your db password here)
+define('DB_DATABASE', "patrick_utested"); // database name
+define('DB_SERVER', "localhost"); // db server
+
+
+?>
