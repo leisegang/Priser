@@ -3,6 +3,9 @@
 /*
  * Following code will create a new utested row
  * All utested details are read from HTTP Post Request
+ * This file will not be used in the final app. 
+ * Because we dont want our users to create the utested. 
+ * They could send us a mail with the information.
  */
 
 // array for JSON response

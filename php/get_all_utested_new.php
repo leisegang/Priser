@@ -1,6 +1,9 @@
 <?php
 /*
- * Following code will list all the utested
+ * Following code will list all the utested with the details from the database.
+ * We use this file to create the main screen on the application. 
+ * The query gets the utested with the price and creates a JSON array that the Android application parses with Java.
+ * A utested is identified by utested id (uid)
  */
 
 // array for JSON response

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * A class file to connect to database
+ * A is a simple class to connect the PHP files to the database so that we can query the database.
  */
 class DB_CONNECT {
 

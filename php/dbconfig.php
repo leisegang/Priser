@@ -1,7 +1,7 @@
 <?php
 
 /*
- * All database connection variables
+ * All database connection variables that the dbconnect.php uses to connedt to the MySQL server.
  */
 
 define('DB_USER', "patrick_utested"); // db user

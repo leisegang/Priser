@@ -1,8 +1,9 @@
 <?php
 
 /*
- * Following code will get single utested details
+ * Following code will get single utested details from the database
  * A utested is identified by utested id (uid)
+ * This file creates a JSON array that the Android application parses with Java.
  */
 
 // array for JSON response
@@ -28,16 +29,15 @@ if (isset($_GET["uid"])) {
         if (mysql_num_rows($result) > 0) {
 
             $result = mysql_fetch_array($result);
-
             $utested = array();
-$utested["uid"] = $result["uid"];
-$utested["name"] = $result["name"];
-$utested["description"] = $result["description"];
-$utested["url"] = $result["url"];
-$utested["picurl"] = $result["picurl"];
-$utested["mapurl"] = $result["mapurl"];
-$utested["pid"] = $result["pid"];
-$utested["price"] = $result["price"];
+			$utested["uid"] = $result["uid"];
+			$utested["name"] = $result["name"];
+			$utested["description"] = $result["description"];
+			$utested["url"] = $result["url"];
+			$utested["picurl"] = $result["picurl"];
+			$utested["mapurl"] = $result["mapurl"];
+			$utested["pid"] = $result["pid"];
+			$utested["price"] = $result["price"];
 
 			
 			
