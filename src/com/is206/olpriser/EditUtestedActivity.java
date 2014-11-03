@@ -55,7 +55,7 @@ public class EditUtestedActivity extends Activity {
 	private static final String TAG_UTESTED = "utested";
 	private static final String TAG_UID = "uid";
 	private static final String TAG_NAME = "name";
-	//private static final String TAG_PRICE = "price";
+	private static final String TAG_PRICE = "price";
 	private static final String TAG_DESCRIPTION = "description";
 	
     // Initiating Menu XML file (menu.xml)
@@ -198,7 +198,7 @@ public class EditUtestedActivity extends Activity {
 
 							// display product data in EditText
 							txtName.setText(utested.getString(TAG_NAME));
-							txtPrice.setText(utested.getString(TAG_NAME));
+							txtPrice.setText(utested.getString(TAG_PRICE));
 							txtDesc.setText(utested.getString(TAG_DESCRIPTION));
 
 						}else{
@@ -255,7 +255,7 @@ public class EditUtestedActivity extends Activity {
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair(TAG_UID, uid));
 			params.add(new BasicNameValuePair(TAG_NAME, name));
-			params.add(new BasicNameValuePair(TAG_NAME, name));
+			params.add(new BasicNameValuePair(TAG_PRICE, price));
 			params.add(new BasicNameValuePair(TAG_DESCRIPTION, description));
 
 			// sending modified data through http request
