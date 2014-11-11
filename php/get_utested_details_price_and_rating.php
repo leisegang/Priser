@@ -47,7 +47,8 @@ $utested["picurl"] = $result["picurl"];
 $utested["mapurl"] = $result["mapurl"];
 $utested["pid"] = $result["pid"];
 $utested["price"] = $result["price"];
-
+$utested["rid"] = $result["rid"];
+$utested["rating"] = $result["rating"];
 			
 			
 			
