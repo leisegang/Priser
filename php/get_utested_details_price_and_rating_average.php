@@ -27,7 +27,7 @@ FROM utested u
 	INNER JOIN price p 
 	    ON p.pid = (SELECT MAX(pid) FROM price WHERE uid = u.uid ORDER BY uid DESC LIMIT 1)
 	INNER JOIN rating r 
-	    ON r.rid = (SELECT uid, AVG(rating) AS average_rating FROM `rating`)
+	    ON r.rid = (SELECT uid, AVG(rating) AS average_rating FROM rating WHERE uid = u.uid)
 WHERE u.uid=$uid
 ORDER BY u.uid DESC LIMIT 1;
 ") or die(mysql_error());
