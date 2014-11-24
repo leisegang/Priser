@@ -22,9 +22,8 @@ SELECT p.uid
       , u.url
       , u.picurl
       , u.mapurl
-      , p.pid
       , p.price
-      , AVG(r.rating) rating
+      , ROUND(AVG(r.rating),1) rating
    FROM utested u
    JOIN price p
      ON p.uid = u.uid
