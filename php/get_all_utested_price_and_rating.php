@@ -16,13 +16,25 @@ $db = new DB_CONNECT();
 
 // get all utested from utested table
 $result = mysql_query("
-SELECT p.uid, u.name, u.description, u.url, u.picurl, u.mapurl, p.pid, p.price, r.rid, r.rating 
-FROM utested u 
-	INNER JOIN price p 
-	    ON p.pid = (SELECT MAX(pid) FROM price WHERE uid = u.uid ORDER BY uid DESC LIMIT 1)
-	INNER JOIN rating r 
-	    ON r.rid = (SELECT MAX(rid) FROM rating WHERE uid = u.uid ORDER BY rid DESC LIMIT 1)
-ORDER BY u.name;
+SELECT p.uid
+      , u.name
+      , u.description
+      , u.url
+      , u.picurl
+      , u.mapurl
+      , p.pid
+      , p.price
+      , AVG(r.rating) rating
+   FROM utested u
+   JOIN price p
+     ON p.uid = u.uid
+   JOIN ( SELECT uid, MAX(pid) latest_price FROM price GROUP BY uid ) px
+     ON px.uid = p.uid
+    AND px.latest_price = p.pid
+   JOIN rating r
+     ON r.uid = u.uid
+  GROUP
+     BY u.name;
 ") or die(mysql_error());
 
 // check for empty result
