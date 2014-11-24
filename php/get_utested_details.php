@@ -1,9 +1,8 @@
 <?php
 
 /*
- * Following code will get single utested details from the database
+ * Following code will get single utested details
  * A utested is identified by utested id (uid)
- * This file creates a JSON array that the Android application parses with Java.
  */
 
 // array for JSON response
@@ -22,23 +21,42 @@ if (isset($_GET["uid"])) {
 
     // get a utested from utesteds table
     
-    $result = mysql_query("SELECT utested.*, price.* FROM utested INNER JOIN price ON utested.uid = price.uid WHERE utested.uid=$uid ORDER BY pid DESC LIMIT 1") or die(mysql_error());
+    $result = mysql_query("
+SELECT p.uid
+      , u.name
+      , u.description
+      , u.url
+      , u.picurl
+      , u.mapurl
+      , p.price
+      , ROUND(AVG(r.rating),1) rating
+   FROM utested u
+   JOIN price p
+     ON p.uid = u.uid
+   JOIN ( SELECT uid, MAX(pid) latest_price FROM price GROUP BY uid ) px
+     ON px.uid = p.uid
+    AND px.latest_price = p.pid
+   JOIN rating r
+     ON r.uid = u.uid
+WHERE u.uid=$uid
+ORDER BY u.uid DESC LIMIT 1
+") or die(mysql_error());
 
     if (!empty($result)) {
         // check for empty result
         if (mysql_num_rows($result) > 0) {
 
             $result = mysql_fetch_array($result);
-            $utested = array();
-			$utested["uid"] = $result["uid"];
-			$utested["name"] = $result["name"];
-			$utested["description"] = $result["description"];
-			$utested["url"] = $result["url"];
-			$utested["picurl"] = $result["picurl"];
-			$utested["mapurl"] = $result["mapurl"];
-			$utested["pid"] = $result["pid"];
-			$utested["price"] = $result["price"];
 
+            $utested = array();
+$utested["uid"] = $result["uid"];
+$utested["name"] = $result["name"];
+$utested["description"] = $result["description"];
+$utested["url"] = $result["url"];
+$utested["picurl"] = $result["picurl"];
+$utested["mapurl"] = $result["mapurl"];
+$utested["price"] = $result["price"];
+$utested["rating"] = $result["rating"];
 			
 			
 			
