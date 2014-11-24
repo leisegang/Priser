@@ -22,14 +22,14 @@ if (isset($_GET["uid"])) {
     // get a utested from utesteds table
     
     $result = mysql_query("
-SELECT p.uid, u.name, u.description, u.url, u.picurl, u.mapurl, p.pid, p.price, r.rid, r.rating 
+SELECT p.uid, u.name, u.description, u.url, u.picurl, u.mapurl, p.pid, p.price, r.rating 
 FROM utested u 
 	INNER JOIN price p 
 	    ON p.pid = (SELECT MAX(pid) FROM price WHERE uid = u.uid ORDER BY uid DESC LIMIT 1)
 	INNER JOIN rating r 
-	    ON r.rid = (SELECT uid, AVG(rating) AS average_rating FROM rating WHERE uid = u.uid)
-WHERE u.uid=$uid
-ORDER BY u.uid DESC LIMIT 1;
+	    ON r.rid = (SELECT AVG(rating) AS average_rating FROM rating WHERE uid = u.uid)
+WHERE u.uid=1
+ORDER BY u.uid DESC LIMIT 1
 ") or die(mysql_error());
 
     if (!empty($result)) {
