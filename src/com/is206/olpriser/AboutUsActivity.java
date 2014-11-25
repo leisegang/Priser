@@ -87,7 +87,7 @@ public class AboutUsActivity extends Activity{
 				
 			}
 		});
-		
+		/**	 
 		// view products click event
 		btnNewProduct.setOnClickListener(new View.OnClickListener() {
 			
@@ -99,5 +99,6 @@ public class AboutUsActivity extends Activity{
 				
 			}
 		});
+		*/
 	}    	
 }
