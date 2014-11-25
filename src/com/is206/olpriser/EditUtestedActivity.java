@@ -32,6 +32,7 @@ public class EditUtestedActivity extends Activity {
 	TextView txtName;
 	TextView txtPrice;
 	TextView txtDesc;
+	TextView txtRating;
 	EditText txtCreatedAt;
 	Button btnSave;
 
@@ -57,6 +58,7 @@ public class EditUtestedActivity extends Activity {
 	private static final String TAG_NAME = "name";
 	private static final String TAG_PRICE = "price";
 	private static final String TAG_DESCRIPTION = "description";
+	private static final String TAG_RATING = "rating";
 	
     // Initiating Menu XML file (menu.xml)
     @Override
@@ -195,11 +197,13 @@ public class EditUtestedActivity extends Activity {
 							txtName = (TextView) findViewById(R.id.inputName);
 							txtPrice = (TextView) findViewById(R.id.inputPrice);
 							txtDesc = (TextView) findViewById(R.id.inputDesc);
+							txtRating = (TextView) findViewById(R.id.inputRating);
 
 							// display product data in EditText
 							txtName.setText(utested.getString(TAG_NAME));
 							txtPrice.setText(utested.getString(TAG_PRICE));
 							txtDesc.setText(utested.getString(TAG_DESCRIPTION));
+							txtRating.setText(utested.getString(TAG_RATING));
 
 						}else{
 							// product with uid not found
@@ -250,6 +254,7 @@ public class EditUtestedActivity extends Activity {
 			String name = txtName.getText().toString();
 			String price = txtPrice.getText().toString();
 			String description = txtDesc.getText().toString();
+			String rating = txtRating.getText().toString();
 
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -257,6 +262,7 @@ public class EditUtestedActivity extends Activity {
 			params.add(new BasicNameValuePair(TAG_NAME, name));
 			params.add(new BasicNameValuePair(TAG_PRICE, price));
 			params.add(new BasicNameValuePair(TAG_DESCRIPTION, description));
+			params.add(new BasicNameValuePair(TAG_RATING, rating));
 
 			// sending modified data through http request
 			// Notice that update product url accepts POST method
