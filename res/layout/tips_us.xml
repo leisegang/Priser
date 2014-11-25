@@ -57,8 +57,8 @@
     <!-- Button Create Product -->
     <Button android:id="@+id/btnTipsUs"
         android:layout_width="298dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button"
         android:textSize="25sp"
