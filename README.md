@@ -4,6 +4,8 @@ This project is done by 3 students at the University of Agder in Norway.
 We have created this android app for comparing beer prices in Kristiansand.
 The app is in Norwegian, but the code is in English (except some parts).
 
+Our website: http://priser.leisegang.no
+
 To launch the app on your phone: 
   1. Open the "bin"-folder
   2. Copy Priser.apk over to your phone
