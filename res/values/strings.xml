@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="velkommen">Velkommen til Ølpriser i Kristiansand. Dette er guiden for deg som er prisbevisst og vil ha den beste ølen.</string>
+    <string name="velkommen">Denne applikasjonen er laget av 3 studenter ved UiA. Vi har laget den som en del av et prosjekt i faget IS-206 Åpen kildekode programvare.</string>
     <string name="app_name">Ølpriser i Kristiansand</string>
     <string name="vis_utesteder">Vis utesteder</string>
     <string name="legg_til_pris">Legg til ny pris</string>

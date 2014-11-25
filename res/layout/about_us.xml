@@ -7,7 +7,18 @@
     android:paddingTop="10dip" 
     android:background="@drawable/gradient_background" >
 
-	<!--  Simple Dashboard screen with Two buttons, a TextView and an ImageView -->    
+    
+	<!-- Om oss overskrift -->    
+    <TextView
+        android:id="@+id/omoss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:text="@string/omoss"
+        android:textSize="20sp"
+        android:textColor="#ffffff" />
+        
+	<!-- Om oss tekst -->    
     <TextView
         android:id="@+id/velkommen"
         android:layout_width="wrap_content"
@@ -17,6 +28,7 @@
         android:textSize="15sp"
         android:textColor="#ffffff" />
  
+    <!-- Om oss bilde -->    
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"

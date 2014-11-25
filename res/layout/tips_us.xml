@@ -2,9 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical" 
     android:background="@drawable/gradient_background" >
 
+	<!-- Tips oss overskrift -->    
+    <TextView
+        android:id="@+id/tipsoss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:text="@string/tips"
+        android:textSize="20sp"
+        android:textColor="#ffffff" />    
+    
     <!-- Text Label -->
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -58,7 +69,6 @@
     <Button android:id="@+id/btnTipsUs"
         android:layout_width="298dp"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button"
         android:textSize="25sp"
