@@ -27,7 +27,7 @@
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"           
-        android:src="@drawable/forside" />"
+        android:src="@drawable/krs1" />
 
     
     <LinearLayout 
