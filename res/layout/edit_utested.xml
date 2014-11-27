@@ -29,48 +29,15 @@
         android:paddingTop="10dip"           
         android:src="@drawable/krs1" />
 
-    
-    <LinearLayout 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-        
-    <!-- Price Label -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:text="@string/pris"
-        android:textSize="17sp"
-        android:textColor="#ffffff" />
-
-    <!-- Price text -->
-    <TextView
-        android:id="@+id/inputPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:layout_weight="0"
-        android:maxLength="4"
-        android:singleLine="true"
-        android:textSize="17sp"
-        android:textColor="#ffffff" /> 
-    </LinearLayout>
-
     <!-- Description Label -->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
-        android:paddingTop="10dip"
+        android:paddingTop="30dip"
         android:text="@string/beskrivelse"
-        android:textSize="17sp"
+        android:textSize="24sp"
         android:textColor="#ffffff" />
 
     <!-- Description text -->
@@ -84,8 +51,57 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp"
-        android:textSize="17sp"
+        android:textSize="18sp"
         android:textColor="#ffffff" />
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+    <!-- Price Label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:text="@string/pris"
+        android:textSize="24sp"
+        android:textColor="#ffffff" />
+
+    <!-- Price text -->
+    <TextView
+        android:id="@+id/inputPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:layout_weight="0"
+        android:maxLength="4"
+        android:singleLine="true"
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        android:layout_gravity="bottom" /> 
+        
+    <!-- Button endre pris -->
+
+    <Button
+        android:id="@+id/btnPrice"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
+        android:paddingTop="5dp"
+        android:text="@string/endre"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+    
+    </LinearLayout>    
     
     <LinearLayout 
         android:layout_width="wrap_content"
@@ -95,41 +111,45 @@
     <!-- Rating Label -->
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_weight="1"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
         android:text="@string/rating"
-        android:textSize="17sp"
+        android:textSize="24sp"
         android:textColor="#ffffff" />
 
     <!-- Rating text -->
     <TextView
         android:id="@+id/inputRating"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
         android:layout_weight="0"
         android:maxLength="4"
         android:singleLine="true"
-        android:textSize="17sp"
+        android:textSize="24sp"
         android:textColor="#ffffff" /> 
-    </LinearLayout>
-    
+        
 
     <!-- Button Create Utested -->
+
     <Button
-        android:id="@+id/btnSave"
-        android:layout_width="298dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:id="@+id/btnRating"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="115dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/button"
+        android:paddingTop="5dp"
         android:text="@string/endre"
-        android:textSize="25sp"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+  
+    </LinearLayout> 
 
 </LinearLayout>

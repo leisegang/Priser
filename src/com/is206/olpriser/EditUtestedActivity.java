@@ -34,7 +34,7 @@ public class EditUtestedActivity extends Activity {
 	TextView txtDesc;
 	TextView txtRating;
 	EditText txtCreatedAt;
-	Button btnSave;
+	Button btnRating;
 
 	String uid;
 
@@ -119,7 +119,7 @@ public class EditUtestedActivity extends Activity {
 		}
 
 		// save and delete button
-		btnSave = (Button) findViewById(R.id.btnSave);
+		btnRating = (Button) findViewById(R.id.btnRating);
 
 		// getting product details from intent
 		Intent i = getIntent();
@@ -131,7 +131,7 @@ public class EditUtestedActivity extends Activity {
 		new GetUtestedDetails().execute();
 
 		// save button click event
-		btnSave.setOnClickListener(new View.OnClickListener() {
+		btnRating.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
