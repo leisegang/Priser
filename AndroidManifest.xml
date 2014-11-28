@@ -18,7 +18,8 @@
         android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         <activity
             android:name=".SplashScreen"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +31,8 @@
         <activity
             android:name=".AllUtestederActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" 
+            android:screenOrientation="portrait" >
         </activity>
 
         <!-- Om Oss Activity -->
@@ -38,7 +40,8 @@
             android:name=".AboutUsActivity"
             android:icon="@drawable/back"
             android:label="@string/omoss"
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+            android:screenOrientation="portrait"  >
         </activity>
 
         <!-- Add Utested Activity -->
@@ -46,7 +49,8 @@
             android:name=".NewUtestedActivity"
             android:icon="@drawable/back"
             android:label="@string/legg_til_utested"
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+            android:screenOrientation="portrait"  >
         </activity>
 
         <!-- Edit Utested Activity -->
@@ -54,7 +58,8 @@
             android:name=".EditUtestedActivity"
             android:icon="@drawable/back"
             android:label="@string/utested"
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+            android:screenOrientation="portrait"  >
         </activity>
         
         <!-- Tips oss Activity -->
@@ -62,7 +67,8 @@
             android:name=".TipsUsActivity"
             android:icon="@drawable/back"
             android:label="@string/tips"
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+            android:screenOrientation="portrait"  >
         </activity>
     </application>
 
