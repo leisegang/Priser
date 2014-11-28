@@ -34,25 +34,4 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/forside" />
-    
-    <Button
-        android:id="@+id/btnViewProducts"
-        android:layout_width="298dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dip"
-        android:background="@drawable/button"
-        android:text="@string/vis_utesteder"
-        android:textSize="25sp" 
-        android:textColor="#ffffff"/>
-   <!--   
-    <Button
-        android:id="@+id/btnCreateProduct"
-        android:layout_width="298dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dip"
-        android:background="@drawable/button"
-        android:text="@string/legg_til_pris"
-        android:textSize="25sp" 
-        android:textColor="#ffffff" />
-	-->
 </LinearLayout>

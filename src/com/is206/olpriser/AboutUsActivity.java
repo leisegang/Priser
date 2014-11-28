@@ -15,9 +15,6 @@ import android.widget.Toast;
 
 public class AboutUsActivity extends Activity{
 	
-	Button btnViewProducts;
-	Button btnNewProduct;
-	
     // Initiating Menu XML file (menu.xml)
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -60,7 +57,6 @@ public class AboutUsActivity extends Activity{
             Toast.makeText(AboutUsActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
             return true;
  
- 
         default:
             return super.onOptionsItemSelected(item);
         }
@@ -71,34 +67,5 @@ public class AboutUsActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.about_us);
 		getActionBar().setHomeButtonEnabled(true);
-		
-		// Buttons
-		btnViewProducts = (Button) findViewById(R.id.btnViewProducts);
-		btnNewProduct = (Button) findViewById(R.id.btnCreateProduct);
-		
-		// view products click event
-		btnViewProducts.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View view) {
-				// Launching All products Activity
-				Intent i = new Intent(getApplicationContext(), AllUtestederActivity.class);
-				startActivity(i);
-				
-			}
-		});
-		/**	 
-		// view products click event
-		btnNewProduct.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View view) {
-				// Launching create new product activity
-				Intent i = new Intent(getApplicationContext(), NewUtestedActivity.class);
-				startActivity(i);
-				
-			}
-		});
-		*/
 	}    	
 }
