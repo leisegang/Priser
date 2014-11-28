@@ -55,7 +55,7 @@
 
         <!-- Edit Utested Activity -->
         <activity
-            android:name=".EditUtestedActivity"
+            android:name=".SingleUtestedActivity"
             android:icon="@drawable/back"
             android:label="@string/utested"
             android:theme="@android:style/Theme.Holo.Light.DarkActionBar"

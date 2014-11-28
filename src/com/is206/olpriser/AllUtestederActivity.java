@@ -122,7 +122,7 @@ public class AllUtestederActivity extends ListActivity {
 
 				// Starting new intent
 				Intent in = new Intent(getApplicationContext(),
-						EditUtestedActivity.class);
+						SingleUtestedActivity.class);
 				// sending uid to next activity
 				in.putExtra(TAG_UID, uid);
 				

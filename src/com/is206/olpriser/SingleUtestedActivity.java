@@ -27,7 +27,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class EditUtestedActivity extends Activity {
+public class SingleUtestedActivity extends Activity {
 
 	TextView txtName;
 	TextView txtPrice;
@@ -87,19 +87,19 @@ public class EditUtestedActivity extends Activity {
             // Ex: launching new activity/screen or show alert message
         	Intent utestederIntent = new Intent(getApplicationContext(), AllUtestederActivity.class);
 			startActivityForResult(utestederIntent, 0);
-            Toast.makeText(EditUtestedActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SingleUtestedActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.tipsOss:
         	Intent tipsIntent = new Intent(getApplicationContext(), TipsUsActivity.class);
 			startActivityForResult(tipsIntent, 0);
-            Toast.makeText(EditUtestedActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SingleUtestedActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.omOss:
         	Intent hjemIntent = new Intent(getApplicationContext(), AboutUsActivity.class);
 			startActivityForResult(hjemIntent, 0);
-            Toast.makeText(EditUtestedActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SingleUtestedActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
             return true;
  
  
@@ -111,7 +111,7 @@ public class EditUtestedActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.edit_utested);
+		setContentView(R.layout.single_utested);
 		getActionBar().setHomeButtonEnabled(true);
 		if (android.os.Build.VERSION.SDK_INT > 9){
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -152,7 +152,7 @@ public class EditUtestedActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			pDialog = new ProgressDialog(EditUtestedActivity.this);
+			pDialog = new ProgressDialog(SingleUtestedActivity.this);
 			pDialog.setMessage("Laster utested detaljer. Vennligst vent...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
@@ -238,7 +238,7 @@ public class EditUtestedActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			pDialog = new ProgressDialog(EditUtestedActivity.this);
+			pDialog = new ProgressDialog(SingleUtestedActivity.this);
 			pDialog.setMessage("Lagrer pris...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
