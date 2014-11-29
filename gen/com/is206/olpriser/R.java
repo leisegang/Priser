@@ -28,7 +28,7 @@ public final class R {
         public static final int btnCreateProduct=0x7f050007;
         public static final int btnEditPrice=0x7f050009;
         public static final int btnEditRating=0x7f05000b;
-        public static final int btnTipsUs=0x7f050012;
+        public static final int btnTipsUs=0x7f050013;
         public static final int editPrice=0x7f050008;
         public static final int hjem=0x7f05000e;
         public static final int imageView1=0x7f050002;
@@ -37,6 +37,7 @@ public final class R {
         public static final int inputName=0x7f050004;
         public static final int inputPrice=0x7f050005;
         public static final int inputRating=0x7f05000a;
+        public static final int inputTo=0x7f050012;
         public static final int name=0x7f05000d;
         public static final int omOss=0x7f050010;
         public static final int omoss=0x7f050000;
@@ -61,6 +62,7 @@ public final class R {
         public static final int alle_utesteder=0x7f04000a;
         public static final int app_name=0x7f040001;
         public static final int beskrivelse=0x7f040006;
+        public static final int email=0x7f040016;
         public static final int endre=0x7f040007;
         public static final int endre_pris=0x7f040013;
         public static final int endre_rating=0x7f040014;
@@ -73,8 +75,9 @@ public final class R {
         public static final int pris=0x7f040005;
         public static final int rating=0x7f04000e;
         public static final int slett=0x7f040008;
+        public static final int til=0x7f040015;
         public static final int tips=0x7f040010;
-        public static final int tips_tekst=0x7f040015;
+        public static final int tips_tekst=0x7f040017;
         public static final int utested=0x7f040012;
         public static final int utested_navn=0x7f040004;
         public static final int velkommen=0x7f040000;

@@ -7,8 +7,18 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.view.View;
+import android.view.View.OnClickListener;
 
 public class TipsUsActivity extends Activity {
+	
+	Button btnTipsUs;
+	TextView inputTo;
+	EditText inputName;
+	EditText inputDesc;
 	
     // Initiating Menu XML file (menu.xml)
     @Override
@@ -63,5 +73,32 @@ public class TipsUsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tips_us);
 		getActionBar().setHomeButtonEnabled(true);
+		
+		btnTipsUs = (Button) findViewById(R.id.btnTipsUs);
+		inputTo = (TextView) findViewById(R.id.inputTo);
+		inputName = (EditText) findViewById(R.id.inputName);
+		inputDesc = (EditText) findViewById(R.id.inputDesc);
+		
+		btnTipsUs.setOnClickListener(new OnClickListener(){
+			
+			@Override
+			public void onClick(View v)	{
+			
+				String to = inputTo.getText().toString();
+				String subject = inputName.getText().toString();
+				String message = inputDesc.getText().toString();
+				
+				Intent email = new Intent(Intent.ACTION_SEND);
+				email.putExtra(Intent.EXTRA_EMAIL, new String[]{to});
+				email.putExtra(Intent.EXTRA_SUBJECT, subject);
+				email.putExtra(Intent.EXTRA_TEXT, message);
+				
+				// need this to prompt email client only
+				email.setType("message/rdc822");
+				
+				startActivity(Intent.createChooser(email, "Velg en e-post klient:"));
+				
+			}
+		});
 	}    	
 }

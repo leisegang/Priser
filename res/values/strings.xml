@@ -5,7 +5,7 @@
     <string name="app_name">Ølpriser i Kristiansand</string>
     <string name="vis_utesteder">Vis utesteder</string>
     <string name="legg_til_pris">Legg til ny pris</string>
-    <string name="utested_navn">Utested navn</string>
+    <string name="utested_navn">Utested navn:</string>
     <string name="pris">Pris:</string>
     <string name="beskrivelse">Beskrivelse:</string>
     <string name="endre">Endre</string>
@@ -22,6 +22,8 @@
     <string name="utested">Utested</string>
     <string name="endre_pris">Endre pris</string>
     <string name="endre_rating">Endre rating</string>
+    <string name="til">Til:</string>
+    <string name="email">post@olpriser.no</string>
     <string name="tips_tekst">Hvis det er et utested du synes vi bør legge til kan du tipse oss her. Vi er takknemmelige for alle tips!</string>
 
 </resources>
