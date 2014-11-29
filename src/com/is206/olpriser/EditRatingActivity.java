@@ -27,12 +27,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SingleUtestedActivity extends Activity {
+public class EditRatingActivity extends Activity {
 
 	TextView txtName;
 	TextView txtPrice;
 	TextView txtDesc;
-	TextView txtRating;
+	EditText txtRating;
 	EditText txtCreatedAt;
 	Button btnRating;
 	Button btnPrice;
@@ -49,7 +49,7 @@ public class SingleUtestedActivity extends Activity {
 	private static final String url_utested_detials = "http://priser.leisegang.no/get_utested_details.php";
 
 	// url to update product
-	private static final String url_update_utested = "http://priser.leisegang.no/update_utested.php";
+	private static final String url_update_rating = "http://priser.leisegang.no/update_utested.php";
 	
 	
 	// JSON Node names
@@ -88,19 +88,19 @@ public class SingleUtestedActivity extends Activity {
             // Ex: launching new activity/screen or show alert message
         	Intent utestederIntent = new Intent(getApplicationContext(), AllUtestederActivity.class);
 			startActivityForResult(utestederIntent, 0);
-            Toast.makeText(SingleUtestedActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditRatingActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.tipsOss:
         	Intent tipsIntent = new Intent(getApplicationContext(), TipsUsActivity.class);
 			startActivityForResult(tipsIntent, 0);
-            Toast.makeText(SingleUtestedActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditRatingActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.omOss:
         	Intent hjemIntent = new Intent(getApplicationContext(), AboutUsActivity.class);
 			startActivityForResult(hjemIntent, 0);
-            Toast.makeText(SingleUtestedActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditRatingActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
             return true;
  
  
@@ -112,7 +112,7 @@ public class SingleUtestedActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.single_utested);
+		setContentView(R.layout.edit_rating);
 		getActionBar().setHomeButtonEnabled(true);
 		if (android.os.Build.VERSION.SDK_INT > 9){
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -132,29 +132,16 @@ public class SingleUtestedActivity extends Activity {
 		// Getting complete product details in background thread
 		new GetUtestedDetails().execute();
 
-		// endre pris button click event
-		btnPrice.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				// starting background task to update product
-				// new SaveUtestedDetails().execute();
-				Intent i = new Intent(getApplicationContext(), EditPriceActivity.class);
-				startActivity(i);
-			}
-		});
-		
-		// endre rating button click event
+		// save button click event
 		btnRating.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
 				// starting background task to update product
 				// new SaveUtestedDetails().execute();
-				Intent i = new Intent(getApplicationContext(), EditRatingActivity.class);
-				startActivity(i);
+				new SaveUtestedDetails().execute();
 			}
-		});		
+		});
 	}
 
 	/**
@@ -168,7 +155,7 @@ public class SingleUtestedActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			pDialog = new ProgressDialog(SingleUtestedActivity.this);
+			pDialog = new ProgressDialog(EditRatingActivity.this);
 			pDialog.setMessage("Laster utested detaljer. Vennligst vent...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
@@ -213,7 +200,7 @@ public class SingleUtestedActivity extends Activity {
 							txtName = (TextView) findViewById(R.id.inputName);
 							txtPrice = (TextView) findViewById(R.id.inputPrice);
 							txtDesc = (TextView) findViewById(R.id.inputDesc);
-							txtRating = (TextView) findViewById(R.id.inputRating);
+							txtRating = (EditText) findViewById(R.id.inputRating);
 
 							// display product data in EditText
 							txtName.setText(utested.getString(TAG_NAME));
@@ -254,7 +241,7 @@ public class SingleUtestedActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			pDialog = new ProgressDialog(SingleUtestedActivity.this);
+			pDialog = new ProgressDialog(EditRatingActivity.this);
 			pDialog.setMessage("Lagrer pris...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
@@ -282,7 +269,7 @@ public class SingleUtestedActivity extends Activity {
 
 			// sending modified data through http request
 			// Notice that update product url accepts POST method
-			JSONObject json = jsonParser.makeHttpRequest(url_update_utested,
+			JSONObject json = jsonParser.makeHttpRequest(url_update_rating,
 					"POST", params);
 
 			// check json success tag

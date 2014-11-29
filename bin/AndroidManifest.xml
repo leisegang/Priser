@@ -62,6 +62,24 @@
             android:screenOrientation="portrait"  >
         </activity>
         
+        <!-- Edit Price Activity -->
+        <activity
+            android:name=".EditPriceActivity"
+            android:icon="@drawable/back"
+            android:label="@string/endre_pris"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+            android:screenOrientation="portrait"  >
+        </activity>
+        
+        <!-- Edit Rating Activity -->
+        <activity
+            android:name=".EditRatingActivity"
+            android:icon="@drawable/back"
+            android:label="@string/endre_rating"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+            android:screenOrientation="portrait"  >
+        </activity>        
+                
         <!-- Tips oss Activity -->
         <activity
             android:name=".TipsUsActivity"

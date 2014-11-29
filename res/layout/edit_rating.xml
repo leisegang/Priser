@@ -85,21 +85,6 @@
         android:textSize="24sp"
         android:textColor="#ffffff"
         android:layout_gravity="bottom" /> 
-        
-    <!-- Button endre pris -->
-
-    <Button
-        android:id="@+id/btnEditPrice"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/button"
-        android:paddingTop="5dp"
-        android:text="@string/endre"
-        android:textColor="#ffffff"
-        android:textSize="18sp" />
     
     </LinearLayout>    
     
@@ -121,8 +106,9 @@
         android:textColor="#ffffff" />
 
     <!-- Rating text -->
-    <TextView
+    <EditText
         android:id="@+id/inputRating"
+        android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:paddingLeft="10dip"
@@ -135,8 +121,7 @@
         android:textColor="#ffffff" /> 
         
 
-    <!-- Button Create Utested -->
-
+    <!-- Button lagre rating -->
     <Button
         android:id="@+id/btnEditRating"
         android:layout_width="80dp"
@@ -148,8 +133,7 @@
         android:paddingTop="5dp"
         android:text="@string/endre"
         android:textColor="#ffffff"
-        android:textSize="18sp" />
-  
+        android:textSize="18sp" /> 
     </LinearLayout> 
 
 </LinearLayout>

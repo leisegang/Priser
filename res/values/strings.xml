@@ -10,16 +10,18 @@
     <string name="beskrivelse">Beskrivelse:</string>
     <string name="endre">Endre</string>
     <string name="slett">Slett</string>
+    <string name="lagre">Lagre</string>
     <string name="alle_utesteder">Alle utesteder</string>
     <string name="legg_til_utested">Legg til utested</string>
     <string name="endre_utested">Endre utested</string>
     <string name="vent">Laster utesteder. Vennligst vent..</string>
     <string name="rating">Rating:</string>
-    <string name="ratingNum">5</string>
     <string name="hjem">Hjem</string>
     <string name="tips">Tips oss</string>
     <string name="omoss">Om Oss</string>
     <string name="utested">Utested</string>
+    <string name="endre_pris">Endre pris</string>
+    <string name="endre_rating">Endre rating</string>
     <string name="tips_tekst">Hvis det er et utested du synes vi bør legge til kan du tipse oss her. Vi er takknemmelige for alle tips!</string>
 
 </resources>

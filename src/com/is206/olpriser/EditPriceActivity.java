@@ -27,14 +27,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SingleUtestedActivity extends Activity {
+public class EditPriceActivity extends Activity {
 
 	TextView txtName;
-	TextView txtPrice;
+	EditText txtPrice;
 	TextView txtDesc;
 	TextView txtRating;
 	EditText txtCreatedAt;
-	Button btnRating;
 	Button btnPrice;
 
 	String uid;
@@ -49,7 +48,7 @@ public class SingleUtestedActivity extends Activity {
 	private static final String url_utested_detials = "http://priser.leisegang.no/get_utested_details.php";
 
 	// url to update product
-	private static final String url_update_utested = "http://priser.leisegang.no/update_utested.php";
+	private static final String url_update_price = "http://priser.leisegang.no/update_pris.php";
 	
 	
 	// JSON Node names
@@ -88,19 +87,19 @@ public class SingleUtestedActivity extends Activity {
             // Ex: launching new activity/screen or show alert message
         	Intent utestederIntent = new Intent(getApplicationContext(), AllUtestederActivity.class);
 			startActivityForResult(utestederIntent, 0);
-            Toast.makeText(SingleUtestedActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditPriceActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.tipsOss:
         	Intent tipsIntent = new Intent(getApplicationContext(), TipsUsActivity.class);
 			startActivityForResult(tipsIntent, 0);
-            Toast.makeText(SingleUtestedActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditPriceActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.omOss:
         	Intent hjemIntent = new Intent(getApplicationContext(), AboutUsActivity.class);
 			startActivityForResult(hjemIntent, 0);
-            Toast.makeText(SingleUtestedActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditPriceActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
             return true;
  
  
@@ -112,15 +111,14 @@ public class SingleUtestedActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.single_utested);
+		setContentView(R.layout.edit_price);
 		getActionBar().setHomeButtonEnabled(true);
 		if (android.os.Build.VERSION.SDK_INT > 9){
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);
 		}
 
-		// price and rating buttons
-		btnRating = (Button) findViewById(R.id.btnEditRating);
+		// save button
 		btnPrice = (Button) findViewById(R.id.btnEditPrice);
 
 		// getting product details from intent
@@ -132,29 +130,15 @@ public class SingleUtestedActivity extends Activity {
 		// Getting complete product details in background thread
 		new GetUtestedDetails().execute();
 
-		// endre pris button click event
+		// save button click event
 		btnPrice.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
 				// starting background task to update product
-				// new SaveUtestedDetails().execute();
-				Intent i = new Intent(getApplicationContext(), EditPriceActivity.class);
-				startActivity(i);
+				new SavePriceDetails().execute();
 			}
 		});
-		
-		// endre rating button click event
-		btnRating.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				// starting background task to update product
-				// new SaveUtestedDetails().execute();
-				Intent i = new Intent(getApplicationContext(), EditRatingActivity.class);
-				startActivity(i);
-			}
-		});		
 	}
 
 	/**
@@ -168,7 +152,7 @@ public class SingleUtestedActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			pDialog = new ProgressDialog(SingleUtestedActivity.this);
+			pDialog = new ProgressDialog(EditPriceActivity.this);
 			pDialog.setMessage("Laster utested detaljer. Vennligst vent...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
@@ -211,7 +195,7 @@ public class SingleUtestedActivity extends Activity {
 							// product with this uid found
 							// Edit Text
 							txtName = (TextView) findViewById(R.id.inputName);
-							txtPrice = (TextView) findViewById(R.id.inputPrice);
+							txtPrice = (EditText) findViewById(R.id.editPrice);
 							txtDesc = (TextView) findViewById(R.id.inputDesc);
 							txtRating = (TextView) findViewById(R.id.inputRating);
 
@@ -246,7 +230,7 @@ public class SingleUtestedActivity extends Activity {
 	/**
 	 * Background Async Task to  Save product Details
 	 * */
-	class SaveUtestedDetails extends AsyncTask<String, String, String> {
+	class SavePriceDetails extends AsyncTask<String, String, String> {
 
 		/**
 		 * Before starting background thread Show Progress Dialog
@@ -254,7 +238,7 @@ public class SingleUtestedActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			pDialog = new ProgressDialog(SingleUtestedActivity.this);
+			pDialog = new ProgressDialog(EditPriceActivity.this);
 			pDialog.setMessage("Lagrer pris...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
@@ -272,6 +256,7 @@ public class SingleUtestedActivity extends Activity {
 			String description = txtDesc.getText().toString();
 			String rating = txtRating.getText().toString();
 
+
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair(TAG_UID, uid));
@@ -280,9 +265,10 @@ public class SingleUtestedActivity extends Activity {
 			params.add(new BasicNameValuePair(TAG_DESCRIPTION, description));
 			params.add(new BasicNameValuePair(TAG_RATING, rating));
 
+
 			// sending modified data through http request
 			// Notice that update product url accepts POST method
-			JSONObject json = jsonParser.makeHttpRequest(url_update_utested,
+			JSONObject json = jsonParser.makeHttpRequest(url_update_price,
 					"POST", params);
 
 			// check json success tag
@@ -310,7 +296,7 @@ public class SingleUtestedActivity extends Activity {
 		 * After completing background task Dismiss the progress dialog
 		 * **/
 		protected void onPostExecute(String file_url) {
-			// dismiss the dialog once product uupdated
+			// dismiss the dialog once product updated
 			pDialog.dismiss();
 		}
 	}
