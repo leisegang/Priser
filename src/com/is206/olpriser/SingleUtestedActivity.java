@@ -30,9 +30,9 @@ import android.widget.Toast;
 public class SingleUtestedActivity extends Activity {
 
 	TextView txtName;
-	TextView txtPrice;
+	EditText txtPrice;
 	TextView txtDesc;
-	TextView txtRating;
+	EditText txtRating;
 	EditText txtCreatedAt;
 	Button btnRating;
 	Button btnPrice;
@@ -49,8 +49,10 @@ public class SingleUtestedActivity extends Activity {
 	private static final String url_utested_detials = "http://priser.leisegang.no/get_utested_details.php";
 
 	// url to update product
-	private static final String url_update_utested = "http://priser.leisegang.no/update_utested.php";
+	private static final String url_update_price = "http://priser.leisegang.no/update_pris.php";
 	
+	// url to update product
+	private static final String url_update_rating = "http://priser.leisegang.no/update_rating.php";	
 	
 	// JSON Node names
 	private static final String TAG_SUCCESS = "success";
@@ -132,27 +134,23 @@ public class SingleUtestedActivity extends Activity {
 		// Getting complete product details in background thread
 		new GetUtestedDetails().execute();
 
-		// endre pris button click event
+		// Save price button click event
 		btnPrice.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
 				// starting background task to update product
-				// new SaveUtestedDetails().execute();
-				Intent i = new Intent(getApplicationContext(), EditPriceActivity.class);
-				startActivity(i);
+				 new SavePriceDetails().execute();
 			}
 		});
 		
-		// endre rating button click event
+		// Save rating button click event
 		btnRating.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
 				// starting background task to update product
-				// new SaveUtestedDetails().execute();
-				Intent i = new Intent(getApplicationContext(), EditRatingActivity.class);
-				startActivity(i);
+				new SaveRatingDetails().execute();
 			}
 		});		
 	}
@@ -211,9 +209,9 @@ public class SingleUtestedActivity extends Activity {
 							// product with this uid found
 							// Edit Text
 							txtName = (TextView) findViewById(R.id.inputName);
-							txtPrice = (TextView) findViewById(R.id.inputPrice);
+							txtPrice = (EditText) findViewById(R.id.inputPrice);
 							txtDesc = (TextView) findViewById(R.id.inputDesc);
-							txtRating = (TextView) findViewById(R.id.inputRating);
+							txtRating = (EditText) findViewById(R.id.inputRating);
 
 							// display product data in EditText
 							txtName.setText(utested.getString(TAG_NAME));
@@ -246,7 +244,7 @@ public class SingleUtestedActivity extends Activity {
 	/**
 	 * Background Async Task to  Save product Details
 	 * */
-	class SaveUtestedDetails extends AsyncTask<String, String, String> {
+	class SavePriceDetails extends AsyncTask<String, String, String> {
 
 		/**
 		 * Before starting background thread Show Progress Dialog
@@ -282,7 +280,7 @@ public class SingleUtestedActivity extends Activity {
 
 			// sending modified data through http request
 			// Notice that update product url accepts POST method
-			JSONObject json = jsonParser.makeHttpRequest(url_update_utested,
+			JSONObject json = jsonParser.makeHttpRequest(url_update_price,
 					"POST", params);
 
 			// check json success tag
@@ -310,8 +308,80 @@ public class SingleUtestedActivity extends Activity {
 		 * After completing background task Dismiss the progress dialog
 		 * **/
 		protected void onPostExecute(String file_url) {
-			// dismiss the dialog once product uupdated
+			// dismiss the dialog once product updated
 			pDialog.dismiss();
 		}
 	}
+	
+	/**
+	 * Background Async Task to  Save product Details
+	 * */
+	class SaveRatingDetails extends AsyncTask<String, String, String> {
+
+		/**
+		 * Before starting background thread Show Progress Dialog
+		 * */
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			pDialog = new ProgressDialog(SingleUtestedActivity.this);
+			pDialog.setMessage("Lagrer rating...");
+			pDialog.setIndeterminate(false);
+			pDialog.setCancelable(true);
+			pDialog.show();
+		}
+
+		/**
+		 * Saving product
+		 * */
+		protected String doInBackground(String... args) {
+
+			// getting updated data from EditTexts
+			String name = txtName.getText().toString();
+			String price = txtPrice.getText().toString();
+			String description = txtDesc.getText().toString();
+			String rating = txtRating.getText().toString();
+
+			// Building Parameters
+			List<NameValuePair> params = new ArrayList<NameValuePair>();
+			params.add(new BasicNameValuePair(TAG_UID, uid));
+			params.add(new BasicNameValuePair(TAG_NAME, name));
+			params.add(new BasicNameValuePair(TAG_PRICE, price));
+			params.add(new BasicNameValuePair(TAG_DESCRIPTION, description));
+			params.add(new BasicNameValuePair(TAG_RATING, rating));
+
+			// sending modified data through http request
+			// Notice that update product url accepts POST method
+			JSONObject json = jsonParser.makeHttpRequest(url_update_rating,
+					"POST", params);
+
+			// check json success tag
+			try {
+				int success = json.getInt(TAG_SUCCESS);
+				
+				if (success == 1) {
+					// successfully updated
+					Intent i = getIntent();
+					// send result code 100 to notify about product update
+					setResult(100, i);
+					finish();
+				} else {
+					// failed to update product
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+
+			return null;
+		}
+
+
+		/**
+		 * After completing background task Dismiss the progress dialog
+		 * **/
+		protected void onPostExecute(String file_url) {
+			// dismiss the dialog once product updated
+			pDialog.dismiss();
+		}
+	}	
 }

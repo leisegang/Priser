@@ -29,7 +29,7 @@
         android:textSize="25sp"
         android:textStyle="bold" 
         android:textColor="#ffffff"/>
-    
+  
 	<ImageView
         android:id="@+id/imageView1"
         android:layout_alignParentRight="true"

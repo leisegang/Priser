@@ -28,7 +28,7 @@ public final class R {
         public static final int btnCreateProduct=0x7f050007;
         public static final int btnEditPrice=0x7f050009;
         public static final int btnEditRating=0x7f05000b;
-        public static final int btnTipsUs=0x7f050013;
+        public static final int btnTipsUs=0x7f050015;
         public static final int editPrice=0x7f050008;
         public static final int hjem=0x7f05000e;
         public static final int imageView1=0x7f050002;
@@ -37,12 +37,14 @@ public final class R {
         public static final int inputName=0x7f050004;
         public static final int inputPrice=0x7f050005;
         public static final int inputRating=0x7f05000a;
-        public static final int inputTo=0x7f050012;
+        public static final int inputTo=0x7f050014;
         public static final int name=0x7f05000d;
         public static final int omOss=0x7f050010;
         public static final int omoss=0x7f050000;
+        public static final int rL12=0x7f050012;
+        public static final int rL123=0x7f050011;
         public static final int tipsOss=0x7f05000f;
-        public static final int tipsoss=0x7f050011;
+        public static final int tipsoss=0x7f050013;
         public static final int uid=0x7f05000c;
         public static final int velkommen=0x7f050001;
     }
