@@ -3,7 +3,7 @@
 /*
  * Following code will list all the utested
  */
-
+header('Content-Type: charset=iso-8859-1');
 // array for JSON response
 $response = array();
 
@@ -62,7 +62,7 @@ if (mysql_num_rows($result) > 0) {
     }
     // success
     $response["success"] = 1;
-
+//print_r ($response);
     // echoing JSON response
     echo json_encode($response);
 } else {

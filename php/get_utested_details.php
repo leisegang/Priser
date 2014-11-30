@@ -4,7 +4,7 @@
  * Following code will get single utested details
  * A utested is identified by utested id (uid)
  */
-
+header('Content-Type: charset=iso-8859-1');
 // array for JSON response
 $response = array();
 
@@ -67,7 +67,7 @@ $utested["rating"] = $result["rating"];
             $response["utested"] = array();
 
             array_push($response["utested"], $utested);
-
+//print_r ($response);
             // echoing JSON response
             echo json_encode($response);
         } else {
