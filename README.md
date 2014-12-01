@@ -53,3 +53,6 @@ look at.
 Future plans
 ======
 Our future plans with the app is to fix the problems that have occured, change some of the functions for the better, develop the app furter, and at some point hopefully release it in the Play Store. 
+We also want to add a map-function where users can click on a link/button that will show them the way to the bar/restaurant
+on a map. 
+Price and rating statistics is also a function that we want to explore in the future.
