@@ -99,7 +99,7 @@
     <Button
         android:id="@+id/btnEditPrice"
         android:layout_width="80dp"
-        android:layout_height="35dp"
+        android:layout_height="36dp"
         android:layout_gravity="bottom"
         android:layout_marginRight="10dip"
         android:layout_alignParentRight="true"
@@ -108,7 +108,7 @@
         android:paddingTop="5dp"
         android:text="@string/lagre"
         android:textColor="#ffffff"
-        android:textSize="18sp" />    
+        android:textSize="16sp" />    
 
     </RelativeLayout>
     </LinearLayout>    
@@ -156,7 +156,7 @@
     <Button
         android:id="@+id/btnEditRating"
         android:layout_width="80dp"
-        android:layout_height="35dp"
+        android:layout_height="36dp"
         android:layout_gravity="bottom"
         android:layout_marginRight="10dip"
         android:layout_marginTop="10dp"
@@ -165,7 +165,7 @@
         android:paddingTop="5dp"
         android:text="@string/lagre"
         android:textColor="#ffffff"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
   	</RelativeLayout>
     </LinearLayout> 
 
