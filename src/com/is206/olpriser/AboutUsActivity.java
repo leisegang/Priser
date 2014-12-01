@@ -1,18 +1,16 @@
 package com.is206.olpriser;
 
-import com.is206.olpriser.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-
+/**
+ * About Us Activity
+ */
 public class AboutUsActivity extends Activity{
 	
     // Initiating Menu XML file (menu.xml)
@@ -61,7 +59,10 @@ public class AboutUsActivity extends Activity{
             return super.onOptionsItemSelected(item);
         }
     }
-	
+	/**
+	 * Sets layout to about_us.xml
+	 * Implements the menu at the top
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

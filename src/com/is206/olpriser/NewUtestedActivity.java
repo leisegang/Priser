@@ -8,8 +8,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.is206.olpriser.R;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -24,6 +22,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * New Utested Activity
+ * ACTIVITY FOR ADDING NEW UTESTED
+ * NOT USED!
+ */
 public class NewUtestedActivity extends Activity {
 
 	// Progress Dialog
@@ -34,7 +37,7 @@ public class NewUtestedActivity extends Activity {
 	EditText inputPrice;
 	EditText inputDesc;
 
-	// url to create new product
+	// url to create new utested
 	private static String url_create_utested = "http://priser.leisegang.no/create_utested.php";
 
 	// JSON Node names
@@ -100,21 +103,21 @@ public class NewUtestedActivity extends Activity {
 		inputDesc = (EditText) findViewById(R.id.inputDesc);
 
 		// Create button
-		Button btnCreateProduct = (Button) findViewById(R.id.btnCreateProduct);
+		Button btnCreateUtested = (Button) findViewById(R.id.btnCreateUtested);
 
 		// button click event
-		btnCreateProduct.setOnClickListener(new View.OnClickListener() {
+		btnCreateUtested.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View view) {
-				// creating new product in background thread
+				// creating new utested in background thread
 				new CreateNewUtested().execute();
 			}
 		});
 	}
 
 	/**
-	 * Background Async Task to Create new product
+	 * Background Async Task to Create new utested
 	 * */
 	class CreateNewUtested extends AsyncTask<String, String, String> {
 
@@ -125,14 +128,14 @@ public class NewUtestedActivity extends Activity {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(NewUtestedActivity.this);
-			pDialog.setMessage("Creating Product..");
+			pDialog.setMessage("Lagrer utested..");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
 			pDialog.show();
 		}
 
 		/**
-		 * Creating product
+		 * Creating utested
 		 * */
 		protected String doInBackground(String... args) {
 			String name = inputName.getText().toString();
@@ -146,7 +149,7 @@ public class NewUtestedActivity extends Activity {
 			params.add(new BasicNameValuePair("description", description));
 
 			// getting JSON Object
-			// Note that create product url accepts POST method
+			// Note that create utested url accepts POST method
 			JSONObject json = jsonParser.makeHttpRequest(url_create_utested,
 					"POST", params);
 			
@@ -158,14 +161,14 @@ public class NewUtestedActivity extends Activity {
 				int success = json.getInt(TAG_SUCCESS);
 
 				if (success == 1) {
-					// successfully created product
+					// successfully created utested
 					Intent i = new Intent(getApplicationContext(), AllUtestederActivity.class);
 					startActivity(i);
 					
 					// closing this screen
 					finish();
 				} else {
-					// failed to create product
+					// failed to create utested
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();

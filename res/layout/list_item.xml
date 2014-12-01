@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <!-- Product id (pid) - will be HIDDEN - used to pass to other activity -->
+	<!-- Layout as a list with utesed Name and an arrow placed in relative layout -->
+    
+    <!-- Utested id (uid) - will be HIDDEN - used to pass to other activity -->
     <TextView
         android:id="@+id/uid"
         android:layout_width="fill_parent"
@@ -29,7 +31,8 @@
         android:textSize="25sp"
         android:textStyle="bold" 
         android:textColor="#ffffff"/>
-  
+    
+	<!-- Arrow picture -->
 	<ImageView
         android:id="@+id/imageView1"
         android:layout_alignParentRight="true"

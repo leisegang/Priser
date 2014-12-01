@@ -5,6 +5,9 @@
     android:orientation="vertical" 
     android:background="@drawable/gradient_background" >
 
+    <!-- Layout with one EditText, six TextViews, a button and a picture -->
+    <!-- Price and Rating placed in a linear layout  -->
+    
     <!-- Name text -->
     <TextView
         android:id="@+id/inputName"
@@ -19,7 +22,7 @@
         android:textSize="40sp"
         android:textColor="#ffffff" />
     
-    <!-- Logo  -->
+    <!-- Image  -->
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"
@@ -87,7 +90,7 @@
         android:textColor="#ffffff"
         android:layout_gravity="bottom" /> 
         
-    <!-- Button endre pris -->
+    <!-- Button Edit Price -->
     <Button
         android:id="@+id/btnEditPrice"
         android:layout_width="80dp"

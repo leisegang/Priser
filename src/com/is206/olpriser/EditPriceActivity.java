@@ -9,8 +9,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.is206.olpriser.R;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -27,6 +25,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Edit Price Activity
+ * FOR LATER USE!
+ * DOES NOT WORK AS INTENDED!
+ */
 public class EditPriceActivity extends Activity {
 
 	TextView txtName;
@@ -44,10 +47,10 @@ public class EditPriceActivity extends Activity {
 	// JSON parser class
 	JSONParser jsonParser = new JSONParser();
 
-	// single product url
+	// single utested url
 	private static final String url_utested_detials = "http://priser.leisegang.no/get_utested_details.php";
 
-	// url to update product
+	// url to update price
 	private static final String url_update_price = "http://priser.leisegang.no/update_pris.php";
 	
 	
@@ -107,7 +110,11 @@ public class EditPriceActivity extends Activity {
             return super.onOptionsItemSelected(item);
         }
     }
-
+    
+	/**
+	 * Sets layout to edit_price.xml
+	 * Implements the menu at the top
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -121,13 +128,13 @@ public class EditPriceActivity extends Activity {
 		// save button
 		btnPrice = (Button) findViewById(R.id.btnEditPrice);
 
-		// getting product details from intent
+		// getting utested details from intent
 		Intent i = getIntent();
 		
-		// getting product id (uid) from intent
+		// getting utested id (uid) from intent
 		uid = i.getStringExtra(TAG_UID);
 
-		// Getting complete product details in background thread
+		// Getting complete utested details in background thread
 		new GetUtestedDetails().execute();
 
 		// save button click event
@@ -135,7 +142,7 @@ public class EditPriceActivity extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				// starting background task to update product
+				// starting background task to update price
 				new SavePriceDetails().execute();
 			}
 		});
@@ -160,7 +167,7 @@ public class EditPriceActivity extends Activity {
 		}
 
 		/**
-		 * Getting product details in background thread
+		 * Getting utested details in background thread
 		 * */
 		protected String doInBackground(String... params) {
 
@@ -174,8 +181,8 @@ public class EditPriceActivity extends Activity {
 						List<NameValuePair> params = new ArrayList<NameValuePair>();
 						params.add(new BasicNameValuePair("uid", uid));
 
-						// getting product details by making HTTP request
-						// Note that product details url will use GET request
+						// getting utested details by making HTTP request
+						// Note that utested details url will use GET request
 						JSONObject json = jsonParser.makeHttpRequest(
 								url_utested_detials, "GET", params);
 
@@ -185,28 +192,28 @@ public class EditPriceActivity extends Activity {
 						// json success tag
 						success = json.getInt(TAG_SUCCESS);
 						if (success == 1) {
-							// successfully received product details
+							// successfully received utested details
 							JSONArray utestedObj = json
 									.getJSONArray(TAG_UTESTED); // JSON Array
 							
-							// get first product object from JSON Array
+							// get first utested object from JSON Array
 							JSONObject utested = utestedObj.getJSONObject(0);
 
-							// product with this uid found
-							// Edit Text
+							// utested with this uid found
+							// Edit Text and Text View
 							txtName = (TextView) findViewById(R.id.inputName);
 							txtPrice = (EditText) findViewById(R.id.editPrice);
 							txtDesc = (TextView) findViewById(R.id.inputDesc);
 							txtRating = (TextView) findViewById(R.id.inputRating);
 
-							// display product data in EditText
+							// display utested data in EditText and TextView
 							txtName.setText(utested.getString(TAG_NAME));
 							txtPrice.setText(utested.getString(TAG_PRICE));
 							txtDesc.setText(utested.getString(TAG_DESCRIPTION));
 							txtRating.setText(utested.getString(TAG_RATING));
 
 						}else{
-							// product with uid not found
+							// utested with uid not found
 						}
 					} catch (JSONException e) {
 						e.printStackTrace();
@@ -228,7 +235,7 @@ public class EditPriceActivity extends Activity {
 	}
 
 	/**
-	 * Background Async Task to  Save product Details
+	 * Background Async Task to  Save price Details
 	 * */
 	class SavePriceDetails extends AsyncTask<String, String, String> {
 
@@ -246,11 +253,11 @@ public class EditPriceActivity extends Activity {
 		}
 
 		/**
-		 * Saving product
+		 * Saving price
 		 * */
 		protected String doInBackground(String... args) {
 
-			// getting updated data from EditTexts
+			// getting updated data from EditTexts and TextViews
 			String name = txtName.getText().toString();
 			String price = txtPrice.getText().toString();
 			String description = txtDesc.getText().toString();
@@ -267,7 +274,7 @@ public class EditPriceActivity extends Activity {
 
 
 			// sending modified data through http request
-			// Notice that update product url accepts POST method
+			// Notice that update price url accepts POST method
 			JSONObject json = jsonParser.makeHttpRequest(url_update_price,
 					"POST", params);
 
@@ -278,11 +285,11 @@ public class EditPriceActivity extends Activity {
 				if (success == 1) {
 					// successfully updated
 					Intent i = getIntent();
-					// send result code 100 to notify about product update
+					// send result code 100 to notify about price update
 					setResult(100, i);
 					finish();
 				} else {
-					// failed to update product
+					// failed to update price
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -296,7 +303,7 @@ public class EditPriceActivity extends Activity {
 		 * After completing background task Dismiss the progress dialog
 		 * **/
 		protected void onPostExecute(String file_url) {
-			// dismiss the dialog once product updated
+			// dismiss the dialog once price updated
 			pDialog.dismiss();
 		}
 	}

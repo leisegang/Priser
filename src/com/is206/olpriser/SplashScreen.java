@@ -5,11 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+/**
+ * Splash Screen Activity
+ */
 public class SplashScreen extends Activity {
 
 	// Splash screen timer
 	private static int SPLASH_TIME_OUT = 1000;
 
+	/**
+	 * Sets layout to activity_splash.xml
+	 */	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -18,8 +24,7 @@ public class SplashScreen extends Activity {
 		new Handler().postDelayed(new Runnable() {
 
 			/*
-			 * Showing splash screen with a timer. This will be useful when you
-			 * want to show case your app logo / company
+			 * Showing splash screen with a timer
 			 */
 
 			@Override

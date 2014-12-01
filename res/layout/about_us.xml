@@ -7,8 +7,9 @@
     android:paddingTop="10dip" 
     android:background="@drawable/gradient_background" >
 
+    <!-- Simple layout with text and a picture -->
     
-	<!-- Om oss overskrift -->    
+	<!-- Om oss heading -->    
     <TextView
         android:id="@+id/omoss"
         android:layout_width="wrap_content"
@@ -18,7 +19,7 @@
         android:textSize="20sp"
         android:textColor="#ffffff" />
         
-	<!-- Om oss tekst -->    
+	<!-- Om oss text -->    
     <TextView
         android:id="@+id/velkommen"
         android:layout_width="wrap_content"
@@ -28,7 +29,7 @@
         android:textSize="15sp"
         android:textColor="#ffffff" />
  
-    <!-- Om oss bilde -->    
+    <!-- Om oss image -->    
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"

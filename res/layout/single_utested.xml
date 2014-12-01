@@ -4,7 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:background="@drawable/gradient_background" >
-
+    
+    <!-- Layout with two EditText, five TextViews, two buttons and a picture -->
+    <!-- Price and Rating placed in a linear layout  -->
+    
     <!-- Name text -->
     <TextView
         android:id="@+id/inputName"
@@ -19,7 +22,7 @@
         android:textSize="40sp"
         android:textColor="#ffffff" />
     
-    <!-- Logo  -->
+    <!-- Image  -->
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"
@@ -69,7 +72,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_weight="1"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
@@ -85,7 +87,6 @@
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:layout_weight="0"
         android:maxLength="4"
         android:singleLine="true"
         android:textSize="24sp"
@@ -94,7 +95,7 @@
         android:layout_marginLeft="100dp"
         android:inputType="number" /> 
 
-    <!-- Button endre pris -->
+    <!-- Button Edit Price -->
     <Button
         android:id="@+id/btnEditPrice"
         android:layout_width="80dp"
@@ -105,7 +106,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/button"
         android:paddingTop="5dp"
-        android:text="@string/endre"
+        android:text="@string/lagre"
         android:textColor="#ffffff"
         android:textSize="18sp" />    
 
@@ -127,7 +128,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_weight="1"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
@@ -152,7 +152,7 @@
         android:inputType="number" /> 
         
 
-    <!-- Button Create Utested -->
+    <!-- Button Edit Rating -->
     <Button
         android:id="@+id/btnEditRating"
         android:layout_width="80dp"
@@ -163,7 +163,7 @@
         android:layout_alignParentRight="true"
         android:background="@drawable/button"
         android:paddingTop="5dp"
-        android:text="@string/endre"
+        android:text="@string/lagre"
         android:textColor="#ffffff"
         android:textSize="18sp" />
   	</RelativeLayout>

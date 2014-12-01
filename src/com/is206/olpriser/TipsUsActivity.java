@@ -13,6 +13,9 @@ import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+/**
+ * Tips Us Activity
+ */
 public class TipsUsActivity extends Activity {
 	
 	Button btnTipsUs;
@@ -68,6 +71,10 @@ public class TipsUsActivity extends Activity {
         }
     }
 	
+    /**
+     * Sets layout to tips_us.xml
+     * Implements the menu at the top
+     */    
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -81,6 +88,12 @@ public class TipsUsActivity extends Activity {
 		
 		btnTipsUs.setOnClickListener(new OnClickListener(){
 			
+			/**
+			 * E-mail function
+			 * Strings text from input
+			 * Makes the user choose e-mail klient
+			 * Paste the Strings to the e-mail klient
+			 */
 			@Override
 			public void onClick(View v)	{
 			

@@ -21,6 +21,9 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+/**
+ * JSON Parser
+ */
 public class JSONParser {
 
 	static InputStream is = null;

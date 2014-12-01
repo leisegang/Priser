@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+						<!-- Text Strings for easy editing -->
+						
     <string name="velkommen">Denne applikasjonen er laget av 3 studenter ved UiA. Vi har laget den som en del av et prosjekt i faget IS-206 Åpen kildekode programvare.</string>
     <string name="app_name">Ølpriser i Kristiansand</string>
     <string name="vis_utesteder">Vis utesteder</string>

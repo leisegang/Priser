@@ -25,7 +25,7 @@ public final class R {
         public static final int tips=0x7f02000b;
     }
     public static final class id {
-        public static final int btnCreateProduct=0x7f050007;
+        public static final int btnCreateUtested=0x7f050007;
         public static final int btnEditPrice=0x7f050009;
         public static final int btnEditRating=0x7f05000b;
         public static final int btnTipsUs=0x7f050015;
@@ -82,6 +82,8 @@ public final class R {
         public static final int tips_tekst=0x7f040017;
         public static final int utested=0x7f040012;
         public static final int utested_navn=0x7f040004;
+        /**  Text Strings for easy editing 
+         */
         public static final int velkommen=0x7f040000;
         public static final int vent=0x7f04000d;
         public static final int vis_utesteder=0x7f040002;

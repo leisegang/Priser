@@ -4,6 +4,7 @@
     android:versionCode="1"
     android:versionName="1.1" >
 
+    <!-- Minimum and target SDK version -->
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="20" />
@@ -16,6 +17,8 @@
         android:icon="@drawable/ikon"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        
+        <!-- SplashScrren activity -->
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name" 
@@ -62,7 +65,8 @@
             android:screenOrientation="portrait"  >
         </activity>
         
-        <!-- Edit Price Activity -->
+        <!-- Edit Price Activity 
+        	 NOT IN USE! -->
         <activity
             android:name=".EditPriceActivity"
             android:icon="@drawable/back"
@@ -71,7 +75,8 @@
             android:screenOrientation="portrait"  >
         </activity>
         
-        <!-- Edit Rating Activity -->
+        <!-- Edit Rating Activity 
+        	 NOT IN USE! -->
         <activity
             android:name=".EditRatingActivity"
             android:icon="@drawable/back"

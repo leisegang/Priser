@@ -9,8 +9,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.is206.olpriser.R;
-
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -29,6 +27,9 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * All Utesteder Activity
+ */
 public class AllUtestederActivity extends ListActivity {
 
 	// Progress Dialog
@@ -39,7 +40,7 @@ public class AllUtestederActivity extends ListActivity {
 
 	ArrayList<HashMap<String, String>> utestederList;
 
-	// url to get all products list
+	// url to get all utesteder list
 	private static String url_all_utesteder = "http://priser.leisegang.no/get_all_utested_new.php";
 
 	// JSON Node names
@@ -94,7 +95,9 @@ public class AllUtestederActivity extends ListActivity {
             return super.onOptionsItemSelected(item);
         }
     }
-
+	/**
+	 * Sets layout to all_utesteder.xml
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -103,14 +106,14 @@ public class AllUtestederActivity extends ListActivity {
 		// Hashmap for ListView
 		utestederList = new ArrayList<HashMap<String, String>>();
 
-		// Loading products in Background Thread
+		// Loading utesteder in Background Thread
 		new LoadAllUtesteder().execute();
 
 		// Get listview
 		ListView lv = getListView();
 
-		// on seleting single product
-		// launching Edit Product Screen
+		// on seleting single utested
+		// launching Single Utested Screen
 		lv.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -133,14 +136,14 @@ public class AllUtestederActivity extends ListActivity {
 
 	}
 
-	// Response from Edit Product Activity
+	// Response from Single Utested Activity
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		// if result code 100
 		if (resultCode == 100) {
 			// if result code 100 is received 
-			// means user edited/deleted product
+			// means user edited/deleted utested
 			// reload this screen again
 			Intent intent = getIntent();
 			finish();
@@ -150,7 +153,7 @@ public class AllUtestederActivity extends ListActivity {
 	}
 
 	/**
-	 * Background Async Task to Load all product by making HTTP Request
+	 * Background Async Task to Load all utesteder by making HTTP Request
 	 * */
 	class LoadAllUtesteder extends AsyncTask<String, String, String> {
 
@@ -168,7 +171,7 @@ public class AllUtestederActivity extends ListActivity {
 		}
 
 		/**
-		 * getting All products from url
+		 * getting All utesteder from url
 		 * */
 		protected String doInBackground(String... args) {
 			// Building Parameters
@@ -184,11 +187,11 @@ public class AllUtestederActivity extends ListActivity {
 				int success = json.getInt(TAG_SUCCESS);
 
 				if (success == 1) {
-					// products found
-					// Getting Array of Products
+					// utesteder found
+					// Getting Array of Utesteder
 					utesteder = json.getJSONArray(TAG_UTESTEDER);
 
-					// looping through All Products
+					// looping through All Utesteder
 					for (int i = 0; i < utesteder.length(); i++) {
 						JSONObject c = utesteder.getJSONObject(i);
 
@@ -207,8 +210,8 @@ public class AllUtestederActivity extends ListActivity {
 						utestederList.add(map);
 					}
 				} else {
-					// no products found
-					// Launch Add New product Activity
+					// no utesteder found
+					// Launch Add New Utested Activity
 					Intent i = new Intent(getApplicationContext(),
 							NewUtestedActivity.class);
 					// Closing all previous activities
@@ -226,7 +229,7 @@ public class AllUtestederActivity extends ListActivity {
 		 * After completing background task Dismiss the progress dialog
 		 * **/
 		protected void onPostExecute(String file_url) {
-			// dismiss the dialog after getting all products
+			// dismiss the dialog after getting all utesteder
 			pDialog.dismiss();
 			// updating UI from Background Thread
 			runOnUiThread(new Runnable() {
