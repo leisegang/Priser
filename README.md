@@ -4,7 +4,7 @@ This project is done by 3 students at the University of Agder in Norway.
 We have created this android app for comparing beer prices in Kristiansand.
 The app is in Norwegian, but the code is in English (except some parts).
 
-Our website: http://priser.leisegang.no    (In Norwegian)
+Our website: http://priser.leisegang.no    (Mostly Norwegian)
 
 To launch the app on your phone: 
   1. Open the "bin"-folder
@@ -37,8 +37,8 @@ private party, we implemented the "Tips us"-function instead. This gives us more
 
 Tools
 ======
-Eclipse and Android Stuid has been our primary tools for developing the app.  
-We have use PHP-scripts to store and retrieve data from our database. Our database is hosted on the domain of one of our
+Eclipse and Android Stuido has been our primary tools for developing the app.  
+We have used PHP-scripts to store and retrieve data from our database. Our database is hosted on the domain of one of our
 group memebers, and we have used PHPMyAdmin to access it. 
 Our website has been created with WordPress and is also hosted on the same domain as our database. 
 
