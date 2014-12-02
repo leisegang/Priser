@@ -45,7 +45,7 @@ Our website has been created with WordPress and is also hosted on the same domai
 Problems
 ======
 We have a problem with displaying "ÆØÅ" from the JSON object in the app. If a field in the database contains "ÆØÅ" the 
-app will display "null". This is something we will continue to look at and hopefyully fix.
+app will display "null". This is something we will continue to look at and hopefully fix.
 
 We also have a problem displaying different images for each of the nightspots in the list. This is also something we will
 look at.
