@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+	<!-- Layout as a list with utesed Name and an arrow placed in relative layout -->
+    
+    <!-- Utested id (uid) - will be HIDDEN - used to pass to other activity -->
+    <TextView
+        android:id="@+id/uid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+    <!-- Name Label -->
+    <TextView
+        android:id="@+id/name"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:textSize="25sp"
+        android:textStyle="bold" 
+        android:textColor="#ffffff"/>
+    
+    <!-- Sort Info Label -->
+    <TextView
+        android:id="@+id/sort_info"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:paddingRight="30dip"
+        android:textSize="25sp"
+        android:textStyle="bold" 
+        android:textColor="#ffffff"/>
+    
+    <TextView
+        android:id="@+id/kroner"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="kr" 
+        android:textColor="#ffffff"/>    
+	</RelativeLayout>
+
+</LinearLayout>

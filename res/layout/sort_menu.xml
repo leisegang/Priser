@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <!-- Single meny item 
+    	 id, icon and title for each menu item -->	 
+	<item android:id="@+id/hjem"
+	    android:icon="@drawable/hjem"
+	    android:title="@string/hjem" />
+
+	<item android:id="@+id/tipsOss"
+	    android:icon="@drawable/tips"
+	    android:title="@string/tips"  />		
+    
+	<item android:id="@+id/omOss"
+	    android:icon="@drawable/omoss"
+	    android:title="@string/omoss" />
+		
+	<item android:id="@+id/sortNavn"
+	    android:title="@string/sort_navn"
+	    android:showAsAction="always" />
+	    
+	<item android:id="@+id/sortPris"
+	    android:title="@string/sort_pris"
+	    android:showAsAction="always" />				
+
+	<item android:id="@+id/sortRating"
+	    android:title="@string/sort_rating"
+	    android:showAsAction="always" />			    
+</menu>
+    
