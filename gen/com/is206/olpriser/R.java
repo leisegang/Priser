@@ -28,23 +28,28 @@ public final class R {
         public static final int btnCreateUtested=0x7f050007;
         public static final int btnEditPrice=0x7f050009;
         public static final int btnEditRating=0x7f05000b;
-        public static final int btnTipsUs=0x7f050015;
+        public static final int btnTipsUs=0x7f05001a;
         public static final int editPrice=0x7f050008;
-        public static final int hjem=0x7f05000e;
+        public static final int hjem=0x7f05000f;
         public static final int imageView1=0x7f050002;
         public static final int imgLogo=0x7f050003;
         public static final int inputDesc=0x7f050006;
         public static final int inputName=0x7f050004;
         public static final int inputPrice=0x7f050005;
         public static final int inputRating=0x7f05000a;
-        public static final int inputTo=0x7f050014;
+        public static final int inputTo=0x7f050019;
+        public static final int kroner=0x7f050012;
         public static final int name=0x7f05000d;
-        public static final int omOss=0x7f050010;
+        public static final int omOss=0x7f050011;
         public static final int omoss=0x7f050000;
-        public static final int rL12=0x7f050012;
-        public static final int rL123=0x7f050011;
-        public static final int tipsOss=0x7f05000f;
-        public static final int tipsoss=0x7f050013;
+        public static final int rL12=0x7f050014;
+        public static final int rL123=0x7f050013;
+        public static final int sortNavn=0x7f050015;
+        public static final int sortPris=0x7f050016;
+        public static final int sortRating=0x7f050017;
+        public static final int sort_info=0x7f05000e;
+        public static final int tipsOss=0x7f050010;
+        public static final int tipsoss=0x7f050018;
         public static final int uid=0x7f05000c;
         public static final int velkommen=0x7f050001;
     }
@@ -57,8 +62,10 @@ public final class R {
         public static final int edit_rating=0x7f030005;
         public static final int list_item=0x7f030006;
         public static final int menu=0x7f030007;
-        public static final int single_utested=0x7f030008;
-        public static final int tips_us=0x7f030009;
+        public static final int price_list_item=0x7f030008;
+        public static final int single_utested=0x7f030009;
+        public static final int sort_menu=0x7f03000a;
+        public static final int tips_us=0x7f03000b;
     }
     public static final class string {
         public static final int alle_utesteder=0x7f04000a;
@@ -77,9 +84,12 @@ public final class R {
         public static final int pris=0x7f040005;
         public static final int rating=0x7f04000e;
         public static final int slett=0x7f040008;
+        public static final int sort_navn=0x7f040019;
+        public static final int sort_pris=0x7f040018;
+        public static final int sort_rating=0x7f040017;
         public static final int til=0x7f040015;
         public static final int tips=0x7f040010;
-        public static final int tips_tekst=0x7f040017;
+        public static final int tips_tekst=0x7f04001a;
         public static final int utested=0x7f040012;
         public static final int utested_navn=0x7f040004;
         /**  Text Strings for easy editing 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
     
     <!-- Single meny item 
     	 id, icon and title for each menu item -->	 
@@ -9,11 +9,11 @@
 
 	<item android:id="@+id/tipsOss"
 	    android:icon="@drawable/tips"
-	    android:title="@string/tips" />		
+	    android:title="@string/tips"  />		
     
 	<item android:id="@+id/omOss"
 	    android:icon="@drawable/omoss"
-	    android:title="@string/omoss" />	
+	    android:title="@string/omoss" />			
 	    
 </menu>
     

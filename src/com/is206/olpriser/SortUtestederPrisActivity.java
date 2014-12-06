@@ -30,7 +30,7 @@ import android.widget.Toast;
 /**
  * All Utesteder Activity
  */
-public class AllUtestederActivity extends ListActivity {
+public class SortUtestederPrisActivity extends ListActivity {
 
 	// Progress Dialog
 	private ProgressDialog pDialog;
@@ -41,13 +41,14 @@ public class AllUtestederActivity extends ListActivity {
 	ArrayList<HashMap<String, String>> utestederList;
 
 	// url to get all utesteder list
-	private static String url_all_utesteder = "http://priser.leisegang.no/get_all_utested_new.php";
+	private static String url_all_utesteder = "http://priser.leisegang.no/get_all_utested_sort_price.php";
 
 	// JSON Node names
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_UTESTEDER = "utesteder";
 	private static final String TAG_UID = "uid";
 	private static final String TAG_NAME = "name";
+	private static final String TAG_PRICE = "price";
 
 	// products JSONArray
 	JSONArray utesteder = null;
@@ -57,7 +58,7 @@ public class AllUtestederActivity extends ListActivity {
     public boolean onCreateOptionsMenu(Menu menu)
     {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.layout.menu, menu);
+        menuInflater.inflate(R.layout.sort_menu, menu);
         return true;
     }
      
@@ -73,23 +74,40 @@ public class AllUtestederActivity extends ListActivity {
         case R.id.hjem:
             // Single menu item is selected do something
             // Ex: launching new activity/screen or show alert message
-        	Intent utestederIntent = new Intent(getApplicationContext(), AllUtestederActivity.class);
+        	Intent utestederIntent = new Intent(getApplicationContext(), SortUtestederPrisActivity.class);
 			startActivityForResult(utestederIntent, 0);
-            Toast.makeText(AllUtestederActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SortUtestederPrisActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.tipsOss:
         	Intent tipsIntent = new Intent(getApplicationContext(), TipsUsActivity.class);
 			startActivityForResult(tipsIntent, 0);
-            Toast.makeText(AllUtestederActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SortUtestederPrisActivity.this, "Tips oss!", Toast.LENGTH_SHORT).show();
             return true;
  
         case R.id.omOss:
         	Intent hjemIntent = new Intent(getApplicationContext(), AboutUsActivity.class);
 			startActivityForResult(hjemIntent, 0);
-            Toast.makeText(AllUtestederActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SortUtestederPrisActivity.this, "Om oss", Toast.LENGTH_SHORT).show();
             return true;
- 
+            
+        case R.id.sortNavn:
+        	Intent navnIntent = new Intent(getApplicationContext(), SortUtestederNavnActivity.class);
+			startActivityForResult(navnIntent, 0);
+            Toast.makeText(SortUtestederPrisActivity.this, "Sortert etter navn", Toast.LENGTH_SHORT).show();
+            return true;
+            
+        case R.id.sortPris:
+        	Intent prisIntent = new Intent(getApplicationContext(), SortUtestederPrisActivity.class);
+			startActivityForResult(prisIntent, 0);
+            Toast.makeText(SortUtestederPrisActivity.this, "Sortert etter pris", Toast.LENGTH_SHORT).show();
+            return true;
+            
+        case R.id.sortRating:
+        	Intent ratingIntent = new Intent(getApplicationContext(), SortUtestederRatingActivity.class);
+			startActivityForResult(ratingIntent, 0);
+            Toast.makeText(SortUtestederPrisActivity.this, "Sortert etter rating", Toast.LENGTH_SHORT).show();
+            return true;            
  
         default:
             return super.onOptionsItemSelected(item);
@@ -163,7 +181,7 @@ public class AllUtestederActivity extends ListActivity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			pDialog = new ProgressDialog(AllUtestederActivity.this);
+			pDialog = new ProgressDialog(SortUtestederPrisActivity.this);
 			pDialog.setMessage("Laster utesteder. Vennligst vent...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
@@ -198,6 +216,7 @@ public class AllUtestederActivity extends ListActivity {
 						// Storing each json item in variable
 						String id = c.getString(TAG_UID);
 						String name = c.getString(TAG_NAME);
+						String price = c.getString(TAG_PRICE);
 
 						// creating new HashMap
 						HashMap<String, String> map = new HashMap<String, String>();
@@ -205,6 +224,7 @@ public class AllUtestederActivity extends ListActivity {
 						// adding each child node to HashMap key => value
 						map.put(TAG_UID, id);
 						map.put(TAG_NAME, name);
+						map.put(TAG_PRICE, price);
 
 						// adding HashList to ArrayList
 						utestederList.add(map);
@@ -238,10 +258,10 @@ public class AllUtestederActivity extends ListActivity {
 					 * Updating parsed JSON data into ListView
 					 * */
 					ListAdapter adapter = new SimpleAdapter(
-							AllUtestederActivity.this, utestederList,
-							R.layout.list_item, new String[] { TAG_UID,
-									TAG_NAME},
-							new int[] { R.id.uid, R.id.name });
+							SortUtestederPrisActivity.this, utestederList,
+							R.layout.price_list_item, new String[] { TAG_UID,
+									TAG_NAME, TAG_PRICE},
+							new int[] { R.id.uid, R.id.name,  R.id.sort_info });
 					// updating listview
 					setListAdapter(adapter);
 				}

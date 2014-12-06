@@ -68,7 +68,7 @@ public class NewUtestedActivity extends Activity {
         case R.id.hjem:
             // Single menu item is selected do something
             // Ex: launching new activity/screen or show alert message
-        	Intent utestederIntent = new Intent(getApplicationContext(), AllUtestederActivity.class);
+        	Intent utestederIntent = new Intent(getApplicationContext(), SortUtestederPrisActivity.class);
 			startActivityForResult(utestederIntent, 0);
             Toast.makeText(NewUtestedActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
             return true;
@@ -162,7 +162,7 @@ public class NewUtestedActivity extends Activity {
 
 				if (success == 1) {
 					// successfully created utested
-					Intent i = new Intent(getApplicationContext(), AllUtestederActivity.class);
+					Intent i = new Intent(getApplicationContext(), SortUtestederPrisActivity.class);
 					startActivity(i);
 					
 					// closing this screen

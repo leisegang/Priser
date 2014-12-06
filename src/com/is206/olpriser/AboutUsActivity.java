@@ -38,7 +38,7 @@ public class AboutUsActivity extends Activity{
         case R.id.hjem:
             // Single menu item is selected do something
             // Ex: launching new activity/screen or show alert message
-        	Intent utestederIntent = new Intent(getApplicationContext(), AllUtestederActivity.class);
+        	Intent utestederIntent = new Intent(getApplicationContext(), SortUtestederPrisActivity.class);
 			startActivityForResult(utestederIntent, 0);
             Toast.makeText(AboutUsActivity.this, "Hjem", Toast.LENGTH_SHORT).show();
             return true;
