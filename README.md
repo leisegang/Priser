@@ -49,6 +49,9 @@ Problems
 We have a problem with displaying "ÆØÅ" from the JSON object in the app. If a field in the database contains "ÆØÅ" the 
 app will display "null". This is something we will continue to look at and hopefully fix.
 
+Another problem we have is the restriction of rating. We are displaying three numbers, but only want the user to enter one.
+Therefore the rating can be wrong if the user enters a three digit number.
+
 We also have a problem displaying different images for each of the nightspots in the list. This is also something we will
 look at.
 
