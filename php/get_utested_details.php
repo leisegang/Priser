@@ -67,9 +67,9 @@ $utested["rating"] = $result["rating"];
             $response["utested"] = array();
 
             array_push($response["utested"], $utested);
-//print_r ($response);
             // echoing JSON response
-            print json_encode($response);
+            print str_replace('\\/', '/', json_encode($response));
+            
         } else {
             // no utested found
             $response["success"] = 0;
