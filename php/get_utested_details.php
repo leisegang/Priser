@@ -4,7 +4,7 @@
  * Following code will get single utested details
  * A utested is identified by utested id (uid)
  */
-header('Content-Type: charset=iso-8859-1');
+header('Content-Type: charset=UTF-8');
 // array for JSON response
 $response = array();
 
@@ -20,7 +20,7 @@ if (isset($_GET["uid"])) {
     $uid = $_GET['uid'];
 
     // get a utested from utesteds table
-    
+$setmysql = mysql_query("SET CHARACTER SET utf8");   
     $result = mysql_query("
 SELECT p.uid
       , u.name
@@ -69,7 +69,7 @@ $utested["rating"] = $result["rating"];
             array_push($response["utested"], $utested);
 //print_r ($response);
             // echoing JSON response
-            echo json_encode($response);
+            print json_encode($response);
         } else {
             // no utested found
             $response["success"] = 0;
