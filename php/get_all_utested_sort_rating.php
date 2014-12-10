@@ -3,7 +3,7 @@
 /*
  * Following code will list all the utested
  */
-
+header('Content-Type: charset=iso-8859-1');
 // array for JSON response
 $response = array();
 
@@ -33,7 +33,8 @@ SELECT p.uid
    JOIN rating r
      ON r.uid = u.uid
   GROUP
-     BY u.name;
+     BY uid
+     ORDER BY rating DESC;
 ") or die(mysql_error());
 
 // check for empty result
@@ -51,9 +52,7 @@ if (mysql_num_rows($result) > 0) {
 		$utested["url"] = $row["url"];
 		$utested["picurl"] = $row["picurl"];
 		$utested["mapurl"] = $row["mapurl"];
-		$utested["pid"] = $row["pid"];
 		$utested["price"] = $row["price"];
-		$utested["rid"] = $row["rid"];
 		$utested["rating"] = $row["rating"];
 		
 
@@ -64,7 +63,7 @@ if (mysql_num_rows($result) > 0) {
     }
     // success
     $response["success"] = 1;
-
+//print_r ($response);
     // echoing JSON response
     echo json_encode($response);
 } else {

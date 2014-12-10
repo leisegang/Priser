@@ -3,8 +3,6 @@
 /*
  * Following code will delete a utested from table
  * A utested is identified by utested id (uid)
- * This file will not be used in the final app. 
- * Because we dont want our users to delete the utested.
  */
 
 // array for JSON response

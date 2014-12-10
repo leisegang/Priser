@@ -1,11 +1,9 @@
 <?php
-/*
- * Following code will list all the utested with the details from the database.
- * We use this file to create the main screen on the application. 
- * The query gets the utested with the price and creates a JSON array that the Android application parses with Java.
- * A utested is identified by utested id (uid)
- */
 
+/*
+ * Following code will list all the utested
+ */
+header('Content-Type: charset=iso-8859-1');
 // array for JSON response
 $response = array();
 
@@ -17,8 +15,26 @@ require_once(__DIR__.'/dbconnect.php');
 $db = new DB_CONNECT();
 
 // get all utested from utested table
-$result = mysql_query("SELECT tbl.uid, tbl.name, tbl.description, tbl.url, tbl.picurl, tbl.mapurl, o.pid, o.price, MaxOrderPID FROM price o JOIN( SELECT c.uid, c.name, c.description, c.url, c.picurl, c.mapurl, MAX(o.pid) AS MaxOrderPID FROM utested c JOIN price o ON c.uid = o.uid GROUP BY c.uid, c.name) tbl ON o.uid = tbl.uid AND o.pid = tbl.MaxOrderPID") or die(mysql_error());
-
+$result = mysql_query("
+SELECT p.uid
+      , u.name
+      , u.description
+      , u.url
+      , u.picurl
+      , u.mapurl
+      , p.price
+      , ROUND(AVG(r.rating),1) rating
+   FROM utested u
+   JOIN price p
+     ON p.uid = u.uid
+   JOIN ( SELECT uid, MAX(pid) latest_price FROM price GROUP BY uid ) px
+     ON px.uid = p.uid
+    AND px.latest_price = p.pid
+   JOIN rating r
+     ON r.uid = u.uid
+  GROUP
+     BY p.price ASC;
+") or die(mysql_error());
 
 // check for empty result
 if (mysql_num_rows($result) > 0) {
@@ -35,9 +51,10 @@ if (mysql_num_rows($result) > 0) {
 		$utested["url"] = $row["url"];
 		$utested["picurl"] = $row["picurl"];
 		$utested["mapurl"] = $row["mapurl"];
-		$utested["pid"] = $row["pid"];
 		$utested["price"] = $row["price"];
-		$utested["MaxOrderPID"] = $row["MaxOrderPID"];
+		$utested["rating"] = $row["rating"];
+		
+
 
 
         // push single product into final response array
@@ -45,7 +62,7 @@ if (mysql_num_rows($result) > 0) {
     }
     // success
     $response["success"] = 1;
-
+//print_r ($response);
     // echoing JSON response
     echo json_encode($response);
 } else {

@@ -33,7 +33,7 @@ SELECT p.uid
    JOIN rating r
      ON r.uid = u.uid
   GROUP
-     BY u.name;
+     BY u.name ASC;
 ") or die(mysql_error());
 
 // check for empty result
