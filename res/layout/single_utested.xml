@@ -17,7 +17,7 @@
         android:layout_marginBottom="15dip"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
         android:singleLine="true"
         android:textSize="40sp"
         android:textColor="#ffffff" />
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
-        android:paddingTop="10dip"           
+        android:paddingTop="3dip"           
         android:src="@drawable/krs1" />
 
     <!-- Description Label -->
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
-        android:paddingTop="30dip"
+        android:paddingTop="5dip"
         android:text="@string/beskrivelse"
         android:textSize="24sp"
         android:textColor="#ffffff" />
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dip"
         android:gravity="top"
-        android:lines="2"
+        android:lines="4"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp"
