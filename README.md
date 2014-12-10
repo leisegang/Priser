@@ -42,6 +42,8 @@ We have used PHP-scripts to store and retrieve data from our database. Our datab
 group memebers, and we have used PHPMyAdmin to access it. 
 Our website has been created with WordPress and is also hosted on the same domain as our database. 
 
+To import this project to Eclipse or Android Studio, choose Import --> Git --> Projects from Git
+
 Problems
 ======
 We have a problem with displaying "ÆØÅ" from the JSON object in the app. If a field in the database contains "ÆØÅ" the 
