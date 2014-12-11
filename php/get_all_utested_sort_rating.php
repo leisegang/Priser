@@ -3,7 +3,7 @@
 /*
  * Following code will list all the utested
  */
-header('Content-Type: charset=iso-8859-1');
+header('Content-Type: charset=UTF-8');
 // array for JSON response
 $response = array();
 
@@ -15,6 +15,7 @@ require_once(__DIR__.'/dbconnect.php');
 $db = new DB_CONNECT();
 
 // get all utested from utested table
+$setmysql = mysql_query("SET CHARACTER SET utf8");  
 $result = mysql_query("
 SELECT p.uid
       , u.name
@@ -65,7 +66,7 @@ if (mysql_num_rows($result) > 0) {
     $response["success"] = 1;
 //print_r ($response);
     // echoing JSON response
-    echo json_encode($response);
+    print str_replace('\\/', '/', json_encode($response));
 } else {
     // no utested found
     $response["success"] = 0;
